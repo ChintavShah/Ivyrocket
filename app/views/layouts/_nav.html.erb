@@ -1,0 +1,37 @@
+<div class= "fixed">
+  <nav class>
+     <div class="twelve columns header_nav">
+     <div class="row">
+        <ul id="menu-header" class="nav-bar horizontal left">
+        <li class="active"><%= link_to "theIvyRoad", root_path %></li>
+        </ul>
+        <ul id="menu-header" class="nav-bar horizontal right">
+        <!--
+          <li class="has-flyout">
+           <a href="#">Example Pages</a><a href="#" class="flyout-toggle"></a>
+            <ul class="flyout">
+              <li class="has-flyout"><a href="blog.html">Blog</a></li>
+              <li class="has-flyout"><a href="blog_single.html">Blog Single Page</a></li>
+              <li class="has-flyout"><a href="products-page.html">Products Page</a></li>
+              <li class="has-flyout"><a href="product-single.html">Product Single</a></li>
+              <li class="has-flyout"><a href="pricing-table.html">Pricing Table</a></li>
+              <li class="has-flyout"><a href="contact.html">Contact Page</a></li>
+            </ul> 
+          </li>-->
+        
+          <li><%= link_to "Pricing", pricing_path %></li>
+          <li><a href="#">Find a Mentor</a></li>
+          <li><a href="#">Become a Mentor</a></li>
+      
+        </ul>
+        
+        <script type="text/javascript">
+         //<![CDATA[
+         $('ul#menu-header').nav-bar();
+          //]]>
+        </script>
+        
+      </div>  
+      </div>
+  </nav>
+</div>
