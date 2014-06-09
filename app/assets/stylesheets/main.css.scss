@@ -151,8 +151,46 @@ body {font-family: "ProximaNova-Light"; background: #fafafa; padding: 0; margin:
 }
 
 .white {
-	color: white; 
+	color: white;
 }
+
+.heading {
+	padding-top: 100px;
+}
+
+.pricing {
+	background-color: #44cd58;
+}
+.pricing-background {
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #44cD58 100%);
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #44cD58 100%);
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #44cD58 100%);
+	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #44cD58 100%);
+	background-image: linear-gradient(to top, #FFFFFF 0%, #44cD58 100%);
+}
+.button-buy {
+	background-color: #096312;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	width: 200px;
+    height: 100px;
+	moz-border-radius: 2px;
+  	-webkit-border-radius: 2px;
+  	padding: 15px;
+}
+.button-buy:hover {
+	background-color: #44cd58;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	width: 200px;
+    height: 100px;
+	moz-border-radius: 2px;
+  	-webkit-border-radius: 2px;
+  	padding: 15px;
+}
+
 
 hr {
     -moz-border-bottom-colors: none;
@@ -186,13 +224,13 @@ header {background-image: url('princeton.jpg'); background-size: cover; padding:
 .featured_post h3 {margin:10px 0 0; color: #000}
 
 p {color: #333}
-.welcome_text {font-size: 32px; margin-bottom: 0; text-align:center; font-weight: normal; font-family:Georgia, "Times New Roman", Times, serif; font-style:italic}
+.welcome_text {font-size: 45px; margin-bottom: 0; text-align:center; font-weight: normal; font-family:"ProximaNova-Light", helvetica, sans-serif}
 .excerpt {font-size: 24px; margin-bottom: 0; font-weight: normal; font-family:Georgia, "Times New Roman", Times, serif; font-style:italic}
 
 h1,h2,h3,h4 {font-family:'ProximaNova-Light',sans-serif; font-weight: normal; color: #333; margin: 10px 0}
 
 /* sections */
-.section_light {background: #FFF; border-top: 1px dotted #999; border-bottom: 1px dotted #999; padding: 20px 0; clear:both}
+.section_light {background: #FFF; border-top: 0px dotted #999; border-bottom: 0px dotted #999; padding: 0; clear:both}
 .section_light h1 {text-align: center; border-bottom: 1px dotted #999; padding-bottom: 20px; margin: 0 0 20px 0}
 
 .section_dark {background: #262626; border-top: 0; border-bottom: 0px dotted #999; padding: 20px 0 20px;}
@@ -246,7 +284,7 @@ dl.tabs dd.active a {background: #fff}
 .nav-bar > li.active:hover { background: #000; cursor: default; }
 .nav-bar > li:hover { background: #eeeeee; color: #000; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2s ease-in-out; -ms-transition: all .2s ease-in-out; -o-transition: all .2s ease-in-out; transition: all .2s ease-in-out}
 .nav-bar > li > a { color: #4d4d4d}
-.nav-bar > li > a:hover { color: #000;}
+.nav-bar > li > a:hover { background: #1ebf38; color: white;}
 .active a { background:#096312; color: #FFF}
 
 .nav-bar > li.has-flyout > a:first-child:after { display: block; width: 0; height: 0; border: solid 5px; border-color: #e0e0e0 transparent transparent transparent; position: absolute; right: 20px; top: 17px; }
