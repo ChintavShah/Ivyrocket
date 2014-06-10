@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { registrations: 'users/registrations', passwords: 'users/passwords' }
   root 'static_pages#home'
   match '/pricing',    to: 'static_pages#pricing',    via: 'get'
 

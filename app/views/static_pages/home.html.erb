@@ -8,8 +8,21 @@
 <!-- ######################## Section ######################## -->
 
 <section class="section_main">
-      
-      <h1 style="text-align:center">Current Ivy students knows exactly
+  
+  <% if !alert.nil? || !notice.nil? %>
+  <div class = "row">
+    <div class="four columns"></div>
+    <div class="four columns">
+      <div class="alert-box alert secondary">
+        <h4 style="text-align:center"><%= notice %><br>
+        <%= alert %></h4>
+      </div>
+    </div>
+    <div class="four columns"></div>
+  </div>
+  <% end %>
+
+      <h1 style="text-align:center">Current Ivy students know exactly
         <br>what their school’s admissions are looking for.</h1>
       <br><br><br><br>
         <div class = "row">
@@ -45,7 +58,7 @@
         <div class="seven columns"><div class = "block-image block-image3"><%= image_tag("block3.png") %></div>
         </div>
         <div class="five columns home-block"><p><h2><strong> Walk-through of the application</strong></h2>
-          <h4 class="subheader"> Mentors will walk you through every single part of your application so that you tell a consistent and captivating story of your high school career to the admissions of your dream school.</h4></p>
+          <h4 class="subheader"> Mentors will walk you through every single part of your application so that you tell a consistent and captivating story of your high school career.</h4></p>
         </div>
       </div>
 
