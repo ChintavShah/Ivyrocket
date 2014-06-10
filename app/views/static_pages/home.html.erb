@@ -1,5 +1,18 @@
 <!-- ######################## Header ######################## -->
         <header>
+          <br><br><br><br><br><br>
+          <% if !alert.nil? || !notice.nil? %>
+              <div class = "row">
+                <div class="four columns"></div>
+                <div class="four columns">
+                  <div class="alert-box alert secondary">
+                    <h4 style="text-align:center"><%= notice %><br>
+                    <%= alert %></h4>
+                  </div>
+                </div>
+                <div class="four columns"></div>
+              </div>
+              <% end %>
           <h1 class="heading_supersize">Get on the road to <br>an Ivy League School.
           <br> <a href="#" class="button-splash">Find a mentor now!</a>
           </h1>
@@ -9,18 +22,6 @@
 
 <section class="section_main">
   
-  <% if !alert.nil? || !notice.nil? %>
-  <div class = "row">
-    <div class="four columns"></div>
-    <div class="four columns">
-      <div class="alert-box alert secondary">
-        <h4 style="text-align:center"><%= notice %><br>
-        <%= alert %></h4>
-      </div>
-    </div>
-    <div class="four columns"></div>
-  </div>
-  <% end %>
 
       <h1 style="text-align:center">Current Ivy students know exactly
         <br>what their school’s admissions are looking for.</h1>
@@ -45,7 +46,7 @@
       <div class="row">
         
         <div class="five columns home-block"><p><h2><strong> Personalized application strategy</strong></h2>
-          <h4 class="subheader"> Our mentors will review your credentials and taylor a specific application strategy for you to get into their school.</h4></p>
+          <h4 class="subheader"> Our mentors will review your credentials and tailor a specific application strategy for you to get into their school.</h4></p>
         </div>
         <div class="seven columns"><div class = "block-image block-image2"><%= image_tag("block2.jpg") %></div>
         </div>
