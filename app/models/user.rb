@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   rolify
   before_create :set_default_role
   before_save do
-    self.slug = name.parameterize
+    self.slug = name.parameterize if :user_is_mentor
   end
   mount_uploader :avatar, AvatarUploader
   #validates_presence_of :avatar
