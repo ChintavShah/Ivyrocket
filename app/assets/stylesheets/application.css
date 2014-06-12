@@ -12,11 +12,8 @@
  *
  *= require_tree .
  *= require_self
- *= require main
- *= require foundation_and_overrides
- *= require app
- *= require foundation
- *= require foundation.min
+ *= require main.css.scss
+ *= require foundation.css
 
 
  */

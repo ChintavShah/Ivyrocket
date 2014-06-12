@@ -294,6 +294,84 @@ input.button-buy:hover {
 	opacity: 1;
 }
 
+input[type='file'] {
+  color: transparent;
+}
+.file-button::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.file-button::before {
+	color:black;
+  content: 'Select some files';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+  font-family: "ProximaNova-Light"
+}
+.file-button:hover::before {
+  border-color: black;
+}
+.file-button:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  width: auto
+}
+.dropdown select {
+	border: 0 !important;  /*Removes border*/
+	-webkit-appearance: none;  /*Removes default chrome and safari style*/
+	-moz-appearance: none; /* Removes Default Firefox style*/
+	background: #44cd58 url(img/select-arrow.png) no-repeat 90% center;
+	width: 200px; /*Width of select dropdown to give space for arrow image*/
+	text-indent: 0.01px; /* Removes default arrow from firefox*/
+	text-overflow: "";  /*Removes default arrow from firefox*/ /*My custom style for fonts*/
+	font-family: "ProximaNova-Light";
+	font-size: 15px;
+	color: #FFF;
+	border-radius: 15px;
+	padding: 10px 10px 10px 75px;
+	box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
+}
+
+.index-heading {
+background-image: -o-linear-gradient(left, #49DE5A 46%, #BFFFC6 100%);
+background-image: -moz-linear-gradient(left, #49DE5A 46%, #BFFFC6 100%);
+background-image: -webkit-linear-gradient(left, #49DE5A 46%, #BFFFC6 100%);
+background-image: -ms-linear-gradient(left, #49DE5A 46%, #BFFFC6 100%);
+background-image: linear-gradient(to left, #49DE5A 46%, #BFFFC6 100%);
+}
+.index-background {
+	background-image: -o-linear-gradient(left, #49DE5A 46%, #BFFFC6 100%);
+	background-image: -moz-linear-gradient(left, #49DE5A 46%, #BFFFC6 100%);
+	background-image: -webkit-linear-gradient(left, #49DE5A 46%, #BFFFC6 100%);
+	background-image: -ms-linear-gradient(left, #49DE5A 46%, #BFFFC6 100%);
+	background-image: linear-gradient(to left, #49DE5A 46%, #BFFFC6 100%);
+	background-size: 100%;
+	animation: bg-move 10s linear infinite;
+	-webkit-animation: bg-move 10s linear infinite;
+}
+.welcome-index {
+	text-align:center;
+	color: white; /*#444446;*/
+	font-size: 70px
+}
+.index-name {
+	color: #444446;
+	&:hover {
+		color: #545356;
+	}
+}
+.index-info {
+	list-style-type:none;
+
+}
 
 
 
@@ -319,11 +397,11 @@ html, body {height: 100%;}
 #wrap {min-height: 100%;}
 
 #main {overflow:auto;
-	padding-bottom: 92px;}  /* must be same height as the footer */
+	padding-bottom: 68px;}  /* must be same height as the footer */
 
 #footer {position: relative;
-	margin-top: -92px; /* negative value of footer height */
-	height: 92px;
+	margin-top: -68px; /* negative value of footer height */
+	height: 68px;
 	clear:both;}
 
 /*sticky footer*/
@@ -355,7 +433,7 @@ h1,h2,h3,h4 {font-family:'ProximaNova-Light',sans-serif; font-weight: normal; co
 .section_light {background: #FFF; border-top: 0px dotted #999; border-bottom: 0px dotted #999; padding: 0; clear:both}
 .section_light h1 {text-align: center; border-bottom: 1px dotted #999; padding-bottom: 20px; margin: 0 0 20px 0}
 
-.section_dark {background: #262626; border-top: 0; border-bottom: 0px dotted #999; padding: 20px 0 20px;}
+.section_dark {background: #262626; border-top: 0; border-bottom: 0px dotted #999; padding: 8px 0 8px;}
 .section_dark h2 {color: #999999; margin: 0 0 20px 0; font-size: 22px; text-align: center}
 
 .section_main {padding: 20px 0 0 0}

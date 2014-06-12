@@ -1,0 +1,192 @@
+<div class="heading pricing">
+  <h1 class="welcome_text white">
+    Edit Profile Information
+  </h1>
+  <h3 class="white" style="text-align:center; margin: 10px 0 0 0"><br><br>
+  </h3>
+</div>
+
+<div class="pricing-background">
+  <div class="row" style="padding-top:0">
+    <div class="one columns"></div>
+    <div class="two columns"><%= image_tag @user.avatar.thumb.url %></div>
+    <div class="six columns">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart:true, method: :put }) do |f| %>
+
+        <% if !resource.errors.empty? %>
+          <div class="alert-box alert">
+            <%= devise_error_messages! %>
+          </div>
+        <% end %>
+
+        <div><%= f.label :email, :class => "label-signup" %><br />
+        <%= f.email_field :email, autofocus: true %></div>
+        
+
+        <% if current_user.has_role? :mentor %>
+          <div><%= f.label :name, :class => "label-signup" %><br />
+          <%= f.text_field :name %></div>
+          
+          <div><%= f.label :bio, :class => "label-signup" %><br />
+          <%= f.text_area :bio %></div>
+
+          
+          <div><%= f.label :school_name, :class => "label-signup" %><br />
+          <%= f.text_field :school_name %></div>
+
+          <div><%= f.label :degree_year, :class => "label-signup" %><br />
+          <%= f.number_field :degree_year %></div>
+          
+          <div><%= f.label :hometown, :class => "label-signup" %><br />
+          <%= f.text_field :hometown %></div>
+          
+          <div><%= f.label :field_of_study, :class => "label-signup" %><br />
+          <%= f.text_field :field_of_study %></div>
+
+          <div><%= f.label :major, :class => "label-signup" %><br />
+          <%= f.text_field :major %></div>
+
+          <div><%= f.label :other_acceptances, :class => "label-signup" %><br />
+          <%= f.text_field :other_acceptances %></div>
+          
+          <div><%= f.label :other_waitlists, :class => "label-signup" %><br />
+          <%= f.text_field :other_waitlists %></div>
+          
+          <div><%= f.label "Applied early?", :class => "label-signup" %><i>if so, which schools?</i>
+          <%= f.text_field :applied_early %></div>
+          
+          <div><%= f.label :SAT_total, :class => "label-signup" %><br />
+          <%= f.number_field :SAT_total %></div>
+
+          <div><%= f.label :SAT_math, :class => "label-signup" %><br />
+          <%= f.number_field :SAT_math %></div>
+
+          <div><%= f.label :SAT_reading, :class => "label-signup" %><br />
+          <%= f.number_field :SAT_reading %></div>
+
+          <div><%= f.label :SAT_writing, :class => "label-signup" %><br />
+          <%= f.number_field :SAT_writing %></div>
+
+          <div><%= f.label :ACT_composite, :class => "label-signup" %><br />
+          <%= f.number_field :ACT_composite %></div>
+          
+          <div class="dropdown"><%= f.label "High school class rank", :class => "label-signup" %><br />
+          <!--<%= f.text_field :class_rank %> -->
+          <% the_array = ['Top 1%', 'Top 5%', 'Top 10%', 'Top 50%'] %>
+          <%=f.select(:class_rank, options_for_select(Array[*the_array.collect {|v,i| [v,v] }])) %></div>
+          <br><br>
+          <!-- -->
+          <div><%= f.label :main_high_school_awards, :class => "label-signup" %><br />
+          <%= f.text_area :main_high_school_awards %></div>
+          
+          <div><%= f.label :main_extracurricular_activities, :class => "label-signup" %><br />
+          <%= f.text_area :main_extracurricular_activities %></div>
+          
+          <div><%= f.label :job_experience, :class => "label-signup" %><br />
+          <%= f.text_area :job_experience %></div>
+          
+          <div><%= f.label :volunteer_experience, :class => "label-signup" %><br />
+          <%= f.text_area :volunteer_experience %></div>
+          
+          <div><%= f.label :summer_activities, :class => "label-signup" %><br />
+          <%= f.text_area :summer_activities %></div>
+          
+          <div><%= f.label :my_strengths, :class => "label-signup" %><br />
+          <%= f.text_area :my_strengths %></div>
+          
+          <div><%= f.label :my_weaknesses, :class => "label-signup" %><br />
+          <%= f.text_area :my_weaknesses %></div>
+          
+          <div><%= f.label :why_i_think_i_was_accepted, :class => "label-signup" %><br />
+          <%= f.text_area :why_i_think_i_was_accepted %></div>
+
+          <div><%= f.label :biggest_piece_of_advice_to_high_school_students, :class => "label-signup" %><br />
+          <%= f.text_area :biggest_piece_of_advice_to_high_school_students %></div>
+
+
+        <% end %>
+
+
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div><%= f.label :password, :class => "label-signup" %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, autocomplete: "off" %></div>
+
+        <div><%= f.label :password_confirmation, :class => "label-signup" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+        
+        
+        <% if current_user.has_role? :mentor %>
+          <div class="label-signup">Profile Image</div><br>
+          <%= f.file_field :avatar, :class=> "file-button" %>
+          <br><br><br>
+        <% end %>
+
+
+
+        <div><%= f.label :current_password, :class => "label-signup" %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.password_field :current_password, autocomplete: "off" %></div>
+        <br><br>
+        <div><%= f.submit "Update", class: "button-buy" %></div>
+      <% end %>
+    
+        
+
+    </div>
+    <div class="three columns"></div>
+  </div>
+</div>
+
+<% if current_user.has_role? :mentor %>
+<br><br><br><br><br><br><br><br><br><br>
+<div id="footer">
+<footer>  
+   <section class="section_dark">
+   
+        <div class="row">
+         <div class="four columns" style="text-align:center">
+            <h4 class="white">About Us</h4>
+            <p class="white"></p>
+         </div>
+         
+      
+          <div class="four columns" style="text-align:center">
+            <h4 class="white"></h4>
+            <p class="white">Copyright 2014</p>
+          </div>
+          
+          
+          <div class="four columns" style="text-align:center">
+            <h4 class="white"></h4>
+            <p class="white">Founded in Philadelphia, PA</p>
+          </div>
+        
+        </div>
+        
+    </section>
+</footer>
+</div>
+</html>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    <h3>Cancel my account</h3>
+
+    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+    <%= link_to "Back", :back %>
+-->
+

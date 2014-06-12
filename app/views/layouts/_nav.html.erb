@@ -20,16 +20,16 @@
           </li>-->
         
           <li><%= link_to "Pricing", pricing_path %></li>
-          <li><a href="#">Find a Mentor</a></li>
+          <li><%= link_to "Find a Mentor", mentors_path %></li>
           <li><a href="#">Become a Mentor</a></li>
 
           <% if user_signed_in? %>
             <li class="has-flyout">
-              <%= link_to "Account", edit_user_registration_path %>
+              <%= link_to "Account", "/profile/#{current_user.slug}" %>
               <ul class="flyout">
 
+                <li class="has-flyout"><%= link_to "Profile", "/profile/#{current_user.slug}" %></li>
                 <li class="has-flyout"><%= link_to "Edit Profile", edit_user_registration_path %></li>
-                <li class="divider"></li>
                 <li class="has-flyout">
                   <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
                 </li>

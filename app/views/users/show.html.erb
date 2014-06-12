@@ -1,0 +1,152 @@
+<div class="profile">
+<br><br><br><br><br><br><br>
+    <div class="profile-p-home" style="font-size:20px; color:black">Hello! My name is</div><br><br>
+<h6 style="font-family: 'ProximaNova-Light';
+  font-size: 3.7em;
+  text-align: center;
+  color: #373738;
+  margin: -.1em 0 1em;
+  font-weight: 700;"><%=@user.name%></h6>
+<div style="text-align:center">
+  <a class="button-splash" href="#" style="width:100px; height:50px; font-size:25px; text-align:center">Chat with me!</a>
+</div><br><br><br><br>
+<div class="row">
+  <div class="one columns"></div>
+  <div class="three columns">
+    <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
+  </div>
+  <div class="one columns"></div>
+  <div class= "seven columns">
+    <h2 class="white"><%=@user.school_name%></h2>
+    <h2 class="white" style="font-size:25px">Majoring in <%=@user.major%></h2>
+    <h2 class="white" style="font-size:20px">Class of <%=@user.degree_year%></h2>
+    <h2 class="white" style="font-size:20px">From <%=@user.hometown%></h2>
+    <div class="row">
+      <div class="four columns">
+        <h4 small class="white">SAT Total: <%=@user.SAT_total%></h4>
+        <% unless @user.SAT_math.blank? %>
+        <h4 class="white" style="font-size:15px">&nbsp;&nbsp;&nbsp;SAT Math: <%=@user.SAT_math%></h4>
+        <h4 class="white" style="font-size:15px">&nbsp;&nbsp;&nbsp;SAT Reading: <%=@user.SAT_reading%></h4>
+        <h4 class="white" style="font-size:15px">&nbsp;&nbsp;&nbsp;SAT Writing: <%=@user.SAT_writing%></h4>
+        <% end %>
+        <% unless @user.ACT_composite.blank? %>
+        <h4 small class="white">ACT Composite: <%=@user.ACT_composite%></h4>
+        <% end %>
+      </div>
+      <div class="six columns">
+        <ul style="list-style-type: none;">
+          <% unless @user.other_acceptances.blank? %>
+          <li style="margin-bottom:5px"><h4 small class="white" style="display:inline">Other Acceptances: <h4 class="white" style="font-size:18px; display:inline"><%=@user.other_acceptances%></h4></h4><br></li>
+          <% end %>
+          <% unless @user.other_waitlists.blank? %>
+          <li style="margin-bottom:5px"><h4 small class="white" style="display:inline">Other Waitlists: <h4 class="white" style="font-size:18px; display:inline"><%=@user.other_waitlists%></h4></h4><br></li>
+          <% end %>
+          <li style="margin-bottom:5px"><h4 small class="white" style="display:inline">Applied Early? <h4 class="white" style="font-size:18px; display:inline"><%=@user.applied_early%></h4></h4><br></li>
+          <li style="margin-bottom:5px"><h4 small class="white" style="display:inline">High School Class Rank: <h4 class="white" style="font-size:18px; display:inline"><%=@user.class_rank%></h4></h4><br></li>
+          </ul>
+      </div>
+      <div class="three columns"></div>
+    </div>
+
+  </div>
+</div>
+<!-- 
+
+<div class="nav">
+  <a href="index.html"><div>Home</div></a>
+  <a href="portfolio.html"><div>Portfolio</div></a>
+  <a href="blog.html"><div>Blog</div></a>
+  <a href="contact.html"><div>Contact</div></a>
+</div>
+
+-->
+
+<div class="profile-p"><%=@user.bio%></div>
+
+<div class="profile-p">
+  <h3 class="white" style="display:inline">Main high school awards: <h4 class="white" style="font-size:20px; display:inline"><%=@user.main_high_school_awards%></h4></h4><br><br>
+  <h3 class="white" style="display:inline">Main extracurricular activities: <h4 class="white" style="font-size:20px; display:inline"><%=@user.main_extracurricular_activities%></h4></h4><br><br>
+  <% unless @user.job_experience.blank? %>
+    <h3 class="white" style="display:inline">Job experience: <h4 class="white" style="font-size:20px; display:inline"><%=@user.job_experience%></h4></h4><br><br>
+  <% end %>
+  <% unless @user.volunteer_experience.blank? %>
+    <h3 class="white" style="display:inline">Volunteer experience: <h4 class="white" style="font-size:20px; display:inline"><%=@user.volunteer_experience%></h4></h4><br><br>
+  <% end %>
+  <% unless @user.summer_activities.blank? %>
+    <h3 class="white" style="display:inline">Summer activities: <h4 class="white" style="font-size:20px; display:inline"><%=@user.summer_activities%></h4></h4><br><br>
+  <% end %>
+</div>
+
+<div class="profile-p">
+  <h3 class="white" style="font-size:33px"> Overall reflections on the college application process: </h3>
+  <h3 class="white" style="display:inline">My strengths: <h4 class="white" style="font-size:20px; display:inline"><%=@user.my_strengths%></h4></h4><br><br>
+  <h3 class="white" style="display:inline">My weaknesses: <h4 class="white" style="font-size:20px; display:inline"><%=@user.my_weaknesses%></h4></h4><br><br>
+  <h3 class="white" style="display:inline">Why I think I was accepted: <h4 class="white" style="font-size:20px; display:inline"><%=@user.why_i_think_i_was_accepted%></h4></h4><br><br>
+  <h3 class="white" style="display:inline">Biggest piece of advice to high school students: <h4 class="white" style="font-size:20px; display:inline"><%=@user.biggest_piece_of_advice_to_high_school_students%></h4></h4><br><br>
+</div> 
+
+
+
+
+<div class="row" style="padding-top: 20px">
+  
+  <div class="three columns">
+    <ul class="pricing-table">
+      <li class="title"><h4><b>Second Hour</b></h4></li>
+      <li class="price">$40.00</li>
+      <li class="bullet-item"><h6 style="color: #4a4a4c; font-weight: normal">This second hour will be used to design a personalized application strategy. Also includes all of the essays of your mentor.<br><br></h6></li>
+      <li class="cta-button"><a class="button-buy" href="#">Buy it Now &raquo;</a></li>
+    </ul>
+  </div>
+
+  <div class="three columns">
+    <ul class="pricing-table">
+      <li class="title"><h4><b>CommonApp</b></h4></li>
+      <li class="price">$60.00</li>
+      <li class="bullet-item"><h6 style="color: #4a4a4c; font-weight: normal">Walk-through of every single part of the CommonApp and time for drafting and polishing two CommonApp essays. <br><br></h6></li>
+      <li class="cta-button"><a class="button-buy" href="#">Buy it Now &raquo;</a></li>
+    </ul>
+  </div>
+
+  <div class="three columns">
+    <ul class="pricing-table">
+      <li class="title"><h4><b>Supplement</b></h4></li>
+      <li class="price">$40.00</li>
+      <li class="bullet-item"><h6 style="color: #4a4a4c; font-weight: normal">Complete coverage of the supplement for a school.<br> This includes time to brain storm and revise the supplement essays and any other short answers. </h6></li>
+      <li class="cta-button"><a class="button-buy" href="#">Buy it Now &raquo;</a></li>
+    </ul>
+  </div>
+
+  <div class="three columns">
+    <ul class="pricing-table">
+      <li class="title"><h4><b>Additional Hours</b></h4></li>
+      <li class="price">$18.00</li>
+      <li class="bullet-item"><h6 style="color: #4a4a4c; font-weight: normal"><br>An additional hour with your mentor that is not included in the previous packages.<br><br></h6></li>
+      <li class="cta-button"><a class="button-buy" href="#">Buy it Now &raquo;</a></li>
+    </ul>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<!-- 
+
+<div class="links">
+  <a href="#"><span>Dev Questions</span><i class="fa fa-file-text"></i></a>
+  <a href="#"><span>Social Media</span><i class="fa fa-comments"></i></a>
+  <a href="#"><span>My Experiments</span><i class="fa fa-code"></i></a>
+  <a href="#"><span>Contact Me</span><i class="fa fa-envelope"></i></a> 
+</div>
+
+
+
+<div class="links">
+  <a href="#"><i class="fa fa-file-text"></i><span>Dev Questions</span></a>
+  <a href="#"><i class="fa fa-briefcase"></i><span>Previous Work</span></a>
+  <a href="#"><i class="fa fa-code"></i><span>My Experiments</span></a>
+  <a href="#"><i class="fa fa-envelope"></i><span>Contact Me</span></a> 
+</div>
+-->
+
+</div>
+

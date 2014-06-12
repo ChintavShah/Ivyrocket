@@ -3,6 +3,10 @@ ruby '2.1.1'
 
 gem 'foundation-rails'
 gem 'devise'
+gem 'rolify'
+gem 'carrierwave'
+gem 'rmagick', :require => 'RMagick'
+#gem 'mini_magick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'

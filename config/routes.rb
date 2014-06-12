@@ -1,7 +1,35 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'users/registrations', passwords: 'users/passwords' }
+  devise_for :users, skip: [:registrations, :passwords, :sessions]
+  devise_scope :user do
+    resource :registration,
+      only: [:create, :edit, :update],
+      path: 'users',
+      path_names: { new: 'sign_up' },
+      controller: 'users/registrations',
+      as: :user_registration do
+        get :cancel
+      end
+    resource :password,
+      controller: 'users/passwords'
+    get 'signin' => 'devise/sessions#new', :as => :new_user_session
+    post 'signin' => 'devise/sessions#create', :as => :user_session
+    delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+    get 'signup' => 'users/registrations#new', :as => :new_user_registration
+    #get 'profile/:email/edit' => 'users/registrations#edit' :as => :
+    #match '/profile/:email',    to: 'users/registrations#show',        via: 'get'
+    
+    #get '/signin' => 'devise/sessions#new'
+    #match '/signout',    to: 'devise/sessions#destroy',        via: 'delete'
+    #get '/signup' => 'users/registrations#new'
+    #get '/signup_mentor' => 'users/registrations#new_mentor'
+    
+  end
   root 'static_pages#home'
-  match '/pricing',    to: 'static_pages#pricing',    via: 'get'
+  match '/pricing',    to: 'static_pages#pricing',        via: 'get'
+  get 'mentors' => 'users#index', :as => :mentors
+  match 'profile/:slug', to: 'users#show', via: 'get'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

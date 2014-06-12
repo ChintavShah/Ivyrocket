@@ -1,0 +1,37 @@
+<div class="heading pricing">
+
+<h1 class="welcome_text white">
+  Forgot your password?
+</h1>
+<h3 class="white" style="text-align:center; margin: 10px 0 0 0">
+  <br><br>
+</h3>
+</div>
+
+<div class="pricing-background">
+<div class="row" style="padding-top:0">
+  <div class="three columns"></div>
+  <div class="six columns">
+
+		<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+		  
+
+		  <% if !resource.errors.empty? %>
+	      <div class="alert-box alert">
+	      <%= devise_error_messages! %>
+	      </div>
+	      <% end %>
+
+		  <div><%= f.label :email, :class => "label-signup" %><br />
+		  <%= f.email_field :email, autofocus: true %></div>
+			<br><br>
+		  <div><%= f.submit "Send me instructions", class: "button-buy", style:"width:250px" %></div>
+		<% end %>
+
+		<%= render "devise/shared/links" %>
+
+		  </div>
+  <div class="three columns"></div>
+
+</div>
+</div>
