@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
     self.slug = name.parameterize
   end
   mount_uploader :avatar, AvatarUploader
-  validates_presence_of :avatar
+  #validates_presence_of :avatar
   validates :name, 
     		:bio,
     		:school_name,
