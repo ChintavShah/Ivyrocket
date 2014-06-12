@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   end
   mount_uploader :avatar, AvatarUploader
   #validates_presence_of :avatar
-  validates :name, 
+  validates_presence_of :name, 
     		:bio,
     		:school_name,
     		:degree_year,
@@ -21,13 +21,17 @@ class User < ActiveRecord::Base
     		:my_strengths,
     		:my_weaknesses,
     		:why_i_think_i_was_accepted,
-    		:biggest_piece_of_advice_to_high_school_students, :presence => true
+    		:biggest_piece_of_advice_to_high_school_students, :if => :user_is_mentor
 
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable
+
+  def user_is_mentor
+    self.has_role? :mentor
+  end
 
   def to_param
     slug
