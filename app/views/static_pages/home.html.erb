@@ -1,18 +1,35 @@
 <!-- ######################## Header ######################## -->
         <header>
-          <% if !alert.nil? || !notice.nil? %>
+          <% if !flash.blank? %>
               <br><br><br><br><br><br>
               <div class = "row">
                 <div class="four columns"></div>
                 <div class="four columns">
                   <div class="alert-box alert secondary">
-                    <h4 style="text-align:center"><%= notice %><br>
-                    <%= alert %></h4>
+                    <h4 style="text-align:center">
+                      <% flash.each do |key, value| %>
+                        <%= value %>
+                      <% end %>
+                    </h4>
                   </div>
                 </div>
                 <div class="four columns"></div>
               </div>
-              <% end %>
+          <% else %>
+            <% if (!alert.nil? || !notice.nil?) %>
+                <br><br><br><br><br><br>
+                <div class = "row">
+                  <div class="four columns"></div>
+                  <div class="four columns">
+                    <div class="alert-box alert secondary">
+                      <h4 style="text-align:center"><%= notice %><br>
+                      <%= alert %></h4>
+                    </div>
+                  </div>
+                  <div class="four columns"></div>
+                </div>
+            <% end %>
+          <% end %>
           <h1 class="heading_supersize">Get on the road to <br>an Ivy League School.
           <br> <a href= <%=mentors_path%> class="button-splash">Find a mentor now!</a>
           </h1>

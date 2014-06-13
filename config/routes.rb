@@ -27,7 +27,8 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   match '/pricing',    to: 'static_pages#pricing',        via: 'get'
   get 'mentors' => 'users#index', :as => :mentors
-  match 'profile/:slug', to: 'users#show', via: 'get'
+  get 'profile/:slug' => 'users#show', :as => :profile
+  get 'profile/mentor_chat/:slug' => 'users#mentor_mailing', :as => :mentor_mailing_chat
 
 
 

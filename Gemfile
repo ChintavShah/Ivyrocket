@@ -7,6 +7,7 @@ gem 'rolify'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 #gem 'mini_magick'
+gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
