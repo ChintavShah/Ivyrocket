@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   	@user = current_user
   	@mentor = User.find_by_slug(params[:slug])
   	MentorMailer.freechat_email(@user, @mentor).deliver
+  	MentorMailer.freechat_email_student(@user, @mentor).deliver
   	flash[:success] = "Email successfully sent!"
   	redirect_to root_url
   end
