@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611165300) do
+ActiveRecord::Schema.define(version: 20140614154200) do
+
+  create_table "orders", force: true do |t|
+    t.string   "express_token"
+    t.string   "payer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "ip_address"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "payer"
+    t.string   "name"
+    t.string   "street1"
+    t.string   "street2"
+    t.string   "city_name"
+    t.string   "state_or_province"
+    t.string   "country"
+    t.string   "country_name"
+    t.string   "postal_code"
+    t.string   "order_total"
+    t.string   "order_total_currency_id"
+    t.integer  "mentor_id"
+    t.integer  "user_id"
+  end
+
+  add_index "orders", ["mentor_id"], name: "index_orders_on_mentor_id"
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -62,16 +88,14 @@ ActiveRecord::Schema.define(version: 20140611165300) do
     t.string   "my_weaknesses"
     t.string   "why_i_think_i_was_accepted"
     t.string   "biggest_piece_of_advice_to_high_school_students"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.string   "avatar"
     t.string   "slug"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["name"], name: "index_users_on_name", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true
 
   create_table "users_roles", id: false, force: true do |t|
     t.integer "user_id"

@@ -35,15 +35,25 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: '68.180.103.40:3000' }
 
   config.action_mailer.smtp_settings = {
-  :address   => "smtp.mandrillapp.com",
-  :port      => 25,
-  :enable_starttls_auto => true,
-  :user_name => ENV["MANDRILL_USERNAME"],
-  :password  => ENV["MANDRILL_API_KEY"],
-  :authentication => 'login',
-  :domain => 'ivyrocket.com',
+    :address   => "smtp.mandrillapp.com",
+    :port      => 25,
+    :enable_starttls_auto => true,
+    :user_name => ENV["MANDRILL_USERNAME"],
+    :password  => ENV["MANDRILL_API_KEY"],
+    :authentication => 'login',
+    :domain => 'ivyrocket.com',
   }
+
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    paypal_options = {
+      :login => ENV["PAYPAL_LOGIN"],
+      :password => ENV["PAYPAL_PASSWORD"],
+      :signature => ENV["PAYPAL_SIGNATURE"]
+    }
+    ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
+  end
 end

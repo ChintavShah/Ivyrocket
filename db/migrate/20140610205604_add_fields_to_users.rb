@@ -25,5 +25,6 @@ class AddFieldsToUsers < ActiveRecord::Migration
     add_column :users, :my_weaknesses, :string
     add_column :users, :why_i_think_i_was_accepted, :string
     add_column :users, :biggest_piece_of_advice_to_high_school_students, :string
+    add_index :users, :name, unique: true
   end
 end

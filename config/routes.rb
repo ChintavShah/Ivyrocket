@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   get 'mentors' => 'users#index', :as => :mentors
   get 'profile/:slug' => 'users#show', :as => :profile
   get 'profile/mentor_chat/:slug' => 'users#mentor_mailing', :as => :mentor_mailing_chat
+  get 'profile/express_order/:slug' => 'users#express_order', :as => :express_order
+  get 'order/' => 'orders#new', :as => :orders
+  post 'order/' => 'orders#create'
 
 
 

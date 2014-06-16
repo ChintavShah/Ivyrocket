@@ -1,0 +1,34 @@
+<div class="profile">
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<h6 style="font-family: 'ProximaNova-Light';
+    font-size: 3.7em;
+    text-align: center;
+    color: white;
+    margin: -.1em 0 1em;
+    font-weight: 700;">Order Confirmation</h6>
+
+
+	
+	<div class="row" style="padding-top:0; padding-bottom:400px">
+	  <div class="three columns"></div>
+	  <div class="six columns">
+
+			<%= form_for @order do |f| %>
+			    <%= f.hidden_field :express_token %>
+			    <h2 class="white">Name: <%= @order.first_name %> <%= @order.last_name %></h2>
+			    <h2 class="white">Payer Email: <%= @order.payer %></h2>
+			    <h2 class="white">Package: <%= @order.name %></h2>
+			    <h2 class="white">Total: <%= @order.order_total %> <%= @order.order_total_currency_id %></h2>
+			    <br class="white"><br>
+			  	<p><%= f.submit "Complete Order", class: "button-buy", style: "width: 300px"%></p>
+			<% end %>
+
+
+
+	  	</div>
+	  <div class="three columns"></div>
+
+	</div>
+
+</div>
+

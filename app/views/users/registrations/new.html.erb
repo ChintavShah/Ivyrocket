@@ -22,6 +22,9 @@
 		
 		  <div><%= f.label :email, :class => "label-signup" %><br />
 		  <%= f.email_field :email, autofocus: true %></div>
+			
+			<div><%= f.label :name, :class => "label-signup" %><br />
+          <%= f.text_field :name %></div>
 
 		  <div><%= f.label :password, :class => "label-signup" %><br />
 		    <%= f.password_field :password, autocomplete: "off" %></div>

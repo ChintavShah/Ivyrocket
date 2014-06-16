@@ -1,14 +1,15 @@
-<div class="heading index-heading">
-  <h1 class="welcome-index">
-    Find a Mentor
-  </h1>
-  <h3 class="white" style="text-align:center; margin: 10px 0 0 0"><br><br>
-  </h3>
-</div>
+<div class="profile">
+	<br><br>
+	<h1 class="welcome-index" style="padding-top:100px">
+	Find a Mentor
+	</h1>
+	<h3 class="white" style="text-align:center; margin: 10px 0 0 0"><br><br>
+</h3>
 
 
 
-<div class="index-background">
+
+
 	<div class="row" style="padding-top:0">
 		<div class="one columns"></div>
 		<div class="ten columns">
@@ -17,15 +18,16 @@
 			  <% length = @users.length %>
 			  <% @users.each_with_index do |user, index| %>
 			    <div class="row" style="padding: 20px 0 20px 0" >
-					<div class="four columns" style="padding-top:10px"><%= link_to (image_tag user.avatar.thumb.url), "/profile/#{user.slug}" %></div>
+					<div class="four columns" style="padding-top:10px">
+						<%= link_to (image_tag user.avatar.thumb.url), "/profile/#{user.slug}" %></div>
 			    	<div class="eight columns">
 					
 			    		<h1><%= link_to(user.name, "/profile/#{user.slug}", class:"index-name")%></h1>
 			    		<ul class="index-info">
-			    			<li><h2><%= user.school_name %></h2></li>
-			    			<li><h3><%= user.major %></h3></li>
-			    			<li><h4><%= user.degree_year %></h4></li>
-			    			<li><h4 small><%= user.bio %></h4></li>
+			    			<li><h2 class="white"><%= user.school_name %></h2></li>
+			    			<li><h3 class="white"><%= user.major %></h3></li>
+			    			<li><h4 class="white"><%= user.degree_year %></h4></li>
+			    			<li><h4 small class="white"><%= user.bio %></h4></li>
 			    		</ul>
 					</div>
 				</div>
@@ -38,3 +40,4 @@
 
 	</div>
 </div>
+

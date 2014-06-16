@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
+  has_many :orders
   rolify
   before_create :set_default_role
   before_save :set_slug, :if => :user_is_mentor
   mount_uploader :avatar, AvatarUploader
   #validates_presence_of :avatar
-  validates_presence_of :name, 
-    		:bio,
+  validates :name, uniqueness: true
+  validates_presence_of	:bio,
     		:school_name,
     		:degree_year,
     		:hometown,

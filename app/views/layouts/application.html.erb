@@ -14,16 +14,17 @@
   </head>
   <div id="wrap">
     <%= render 'layouts/nav' %>
-    <% if (params[:action] == "show" && params[:controller] == "users") %>
+    <% if ((params[:action] == "show" && params[:controller] == "users") || (params[:action] == "new" && params[:controller] == "orders")) || (params[:action] == "index" && params[:controller] == "users")%>
       <div class="profile-body" style="margin:0">
     <% end %>
         <body>    
           <%= yield %>
           <%= javascript_include_tag "application" %>
         </body>
-    <% if (params[:action] == "show" && params[:controller] == "users") %>
+    <% if ((params[:action] == "show" && params[:controller] == "users") || (params[:action] == "new" && params[:controller] == "orders")) || (params[:action] == "index" && params[:controller] == "users")%>
       </div>
     <% end %>
+    <!--<%= debug(params) if Rails.env.development? %>-->
   </div>
 
   <%= render 'layouts/footer' unless ((!current_user.nil? && (current_user.has_role? :mentor)) && current_page?('/users/edit')) %>

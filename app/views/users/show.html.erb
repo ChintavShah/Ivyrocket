@@ -1,4 +1,259 @@
-<% if @confirm.nil? || @confirm == 'false' %>
+<% if @confirm == 'true' %>
+<div class="profile">
+  <br><br><br><br><br><br><br>
+  <div class="profile-p-home" style="font-size:20px; color:black">Hello! My name is</div><br><br>
+  <h6 style="font-family: 'ProximaNova-Light';
+    font-size: 3.7em;
+    text-align: center;
+    color: #373738;
+    margin: -.1em 0 1em;
+    font-weight: 700;"><%=@user.name%></h6>
+  
+  <div class="row" style="padding-bottom:250px">
+    <div class="three columns">
+      <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
+    </div>
+    <div class="one column"></div>
+    <div class="seven columns">
+      <div class="profile-p" style="margin-top:-15px; border-bottom-style:none">
+        You will be sending an email to <%=@user.name %> with your email address. <%=@user.name %> will contact you as soon as possible via email to set up a time to chat. Are you sure you want to send this email?
+      </div>
+      <br><br><br>
+      <div class="row">
+        <div class="three columns"></div>
+        <div class="two columns">
+          <div style="text-align: right">
+            <%= link_to "Yes", mentor_mailing_chat_path, {style: 'width:500px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
+          </div>
+        </div>
+        <div class="two columns"></div>
+        <div class="two columns">
+          <div style="text-align: left">
+            <%= link_to "No", profile_path(:confirmation => false), {style: 'width:200px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
+          </div>
+        </div>
+        <div class="three columns"></div>
+      </div> 
+    </div>
+    <div class="one column"></div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+</div>
+<% elsif @first_hour == 'true' %>
+<div class="profile">
+  <br><br><br><br><br><br><br>
+      <div class="profile-p-home" style="font-size:20px; color:black">Hello! My name is</div><br><br>
+  <h6 style="font-family: 'ProximaNova-Light';
+    font-size: 3.7em;
+    text-align: center;
+    color: #373738;
+    margin: -.1em 0 1em;
+    font-weight: 700;"><%=@user.name%></h6>
+  
+  <div class="row" style="padding-bottom:250px">
+    <div class="three columns">
+      <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
+    </div>
+    <div class="one column"></div>
+    <div class="seven columns">
+      <div class="profile-p" style="margin-top:-15px; border-bottom-style:none">
+        You will be purchasing the first hour with <%=@user.name %> for $40, which also comes with all of <%=@user.name %>'s college application essays. This first hour will mainly consist of crafting a personalized application strategy for <%= @user.school_name %>. Are you sure you want to purchase? (you will be redirected to Paypal)
+      </div>
+      <br><br><br>
+      <div class="row">
+        <div class="two columns"></div>
+        <div class="three columns">
+          <div style="text-align: right">
+            <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), express_order_path(:package => 'first hour'), {style: 'text-align:center; padding-left:0px'}%>
+          </div>
+        </div>
+        <div class="two columns"></div>
+        <div class="two columns">
+          <div style="text-align: left">
+            <%= link_to "No", profile_path(:confirmation => false), {style: 'width:200px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
+          </div>
+        </div>
+        <div class="three columns"></div>
+      </div> 
+    </div>
+    <div class="one column"></div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+</div>
+
+<% elsif @commonapp == 'true' %>
+
+<div class="profile">
+  <br><br><br><br><br><br><br>
+      <div class="profile-p-home" style="font-size:20px; color:black">Hello! My name is</div><br><br>
+  <h6 style="font-family: 'ProximaNova-Light';
+    font-size: 3.7em;
+    text-align: center;
+    color: #373738;
+    margin: -.1em 0 1em;
+    font-weight: 700;"><%=@user.name%></h6>
+  
+  <div class="row" style="padding-bottom:250px">
+    <div class="three columns">
+      <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
+    </div>
+    <div class="one column"></div>
+    <div class="seven columns">
+      <div class="profile-p" style="margin-top:-50px; border-bottom-style:none">
+        You will be purchasing the CommonApp package with <%=@user.name %> for $60. This will cover the walk-through of the CommonApp and the CommonApp application essays (does not include Supplement essays). You must purchase the first hour with <%=@user.name %> before you can purchase this package. Are you sure you want to purchase? (you will be redirected to Paypal)
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="two columns"></div>
+        <div class="three columns">
+          <div style="text-align: right">
+            <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), express_order_path(:package => 'commonapp'), {style: 'text-align:center; padding-left:0px'}%>
+          </div>
+        </div>
+        <div class="two columns"></div>
+        <div class="two columns">
+          <div style="text-align: left">
+            <%= link_to "No", profile_path(:confirmation => false), {style: 'width:200px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
+          </div>
+        </div>
+        <div class="three columns"></div>
+      </div> 
+    </div>
+    <div class="one column"></div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+</div>
+
+<% elsif @supplement == 'true' %>
+
+<div class="profile">
+  <br><br><br><br><br><br><br>
+      <div class="profile-p-home" style="font-size:20px; color:black">Hello! My name is</div><br><br>
+  <h6 style="font-family: 'ProximaNova-Light';
+    font-size: 3.7em;
+    text-align: center;
+    color: #373738;
+    margin: -.1em 0 1em;
+    font-weight: 700;"><%=@user.name%></h6>
+  
+  <div class="row" style="padding-bottom:250px">
+    <div class="three columns">
+      <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
+    </div>
+    <div class="one column"></div>
+    <div class="seven columns">
+      <div class="profile-p" style="margin-top:-40px; border-bottom-style:none">
+        You will be purchasing the Supplement package with <%=@user.name %> for $40. This will cover the supplement for <%= @user.school_name %> (essays and short answers). You must purchase the first hour with <%=@user.name %> before you can purchase this package. Are you sure you want to purchase? (you will be redirected to Paypal)
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="two columns"></div>
+        <div class="three columns">
+          <div style="text-align: right">
+            <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), express_order_path(:package => 'supplement'), {style: 'text-align:center; padding-left:0px'}%>
+          </div>
+        </div>
+        <div class="two columns"></div>
+        <div class="two columns">
+          <div style="text-align: left">
+            <%= link_to "No", profile_path(:confirmation => false), {style: 'width:200px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
+          </div>
+        </div>
+        <div class="three columns"></div>
+      </div> 
+    </div>
+    <div class="one column"></div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+</div>
+
+<% elsif @add_hour == 'true' %>
+
+<div class="profile">
+  <br><br><br><br><br><br><br>
+      <div class="profile-p-home" style="font-size:20px; color:black">Hello! My name is</div><br><br>
+  <h6 style="font-family: 'ProximaNova-Light';
+    font-size: 3.7em;
+    text-align: center;
+    color: #373738;
+    margin: -.1em 0 1em;
+    font-weight: 700;"><%=@user.name%></h6>
+  
+  <div class="row" style="padding-bottom:250px">
+    <div class="three columns">
+      <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
+    </div>
+    <div class="one column"></div>
+    <div class="seven columns">
+      <div class="profile-p" style="margin-top:-40px; border-bottom-style:none">
+        You will be purchasing an additional hour with <%=@user.name %> for $18. You can use this additional hour with <%=@user.name %> for anything you want to discuss. You must purchase the first hour with <%=@user.name %> before you can purchase this package. Are you sure you want to purchase? (you will be redirected to Paypal)
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="two columns"></div>
+        <div class="three columns">
+          <div style="text-align: right">
+            <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), express_order_path(:package => 'add hour'), {style: 'text-align:center; padding-left:0px'}%>
+          </div>
+        </div>
+        <div class="two columns"></div>
+        <div class="two columns">
+          <div style="text-align: left">
+            <%= link_to "No", profile_path(:confirmation => false), {style: 'width:200px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
+          </div>
+        </div>
+        <div class="three columns"></div>
+      </div> 
+    </div>
+    <div class="one column"></div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+</div>
+
+<% elsif @complete == 'true' %>
+
+<div class="profile">
+  <br><br><br><br><br><br><br>
+      <div class="profile-p-home" style="font-size:20px; color:black">Hello! My name is</div><br><br>
+  <h6 style="font-family: 'ProximaNova-Light';
+    font-size: 3.7em;
+    text-align: center;
+    color: #373738;
+    margin: -.1em 0 1em;
+    font-weight: 700;"><%=@user.name%></h6>
+  
+  <div class="row" style="padding-bottom:250px">
+    <div class="three columns">
+      <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
+    </div>
+    <div class="one column"></div>
+    <div class="seven columns">
+      <div class="profile-p" style="margin-top:-20px; border-bottom-style:none">
+        You will be purchasing the Complete Package with <%=@user.name %> for $200, which includes the CommonApp package, the Supplement package for <%=@user.school_name%>, and ten hours with <%=@user.name%>. Are you sure you want to purchase? (you will be redirected to Paypal)
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="two columns"></div>
+        <div class="three columns">
+          <div style="text-align: right">
+            <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), express_order_path(:package => 'complete'), {style: 'text-align:center; padding-left:0px'}%>
+          </div>
+        </div>
+        <div class="two columns"></div>
+        <div class="two columns">
+          <div style="text-align: left">
+            <%= link_to "No", profile_path(:confirmation => false), {style: 'width:200px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
+          </div>
+        </div>
+        <div class="three columns"></div>
+      </div> 
+    </div>
+    <div class="one column"></div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+</div>
+
+<% else %>
   <div class="profile">
   <br><br><br><br><br><br><br>
       <div class="profile-p-home" style="font-size:20px; color:black">Hello! My name is</div><br><br>
@@ -80,43 +335,54 @@
 
 
 
-  <div class="row" style="padding-top: 20px">
+  <div class="row" style="padding-top: 20px; width: 1300px">
     
-    <div class="three columns">
-      <ul class="pricing-table">
-        <li class="title"><h4><b>Second Hour</b></h4></li>
+    <div class="two columns" style="margin-right:20px">
+      <ul class="pricing-table" style="width: 234px;">
+        <li class="title"><h4><b>First Hour</b></h4></li>
         <li class="price">$40.00</li>
-        <li class="bullet-item"><h6 style="color: #4a4a4c; font-weight: normal">This second hour will be used to design a personalized application strategy. Also includes all of the essays of your mentor.<br><br></h6></li>
-        <li class="cta-button"><a class="button-buy" href="#">Buy it Now &raquo;</a></li>
+        <li class="bullet-item" style="height: 120px"><h6 style="color: #4a4a4c; font-weight: normal">This first hour will be used to design a personalized application strategy. Also includes all of the essays of your mentor.<br><br></h6></li>
+        <li class="cta-button"><%= link_to "Buy it Now", profile_path(:first_hour => true), {class: "button-buy"}%></li>
       </ul>
     </div>
 
-    <div class="three columns">
-      <ul class="pricing-table">
+    <div class="two columns" style="margin-right:20px">
+      <ul class="pricing-table" style="width: 234px">
         <li class="title"><h4><b>CommonApp</b></h4></li>
         <li class="price">$60.00</li>
-        <li class="bullet-item"><h6 style="color: #4a4a4c; font-weight: normal">Walk-through of every single part of the CommonApp and time for drafting and polishing two CommonApp essays. <br><br></h6></li>
-        <li class="cta-button"><a class="button-buy" href="#">Buy it Now &raquo;</a></li>
+        <li class="bullet-item" style="height: 120px"><h6 style="color: #4a4a4c; font-weight: normal">Walk-through of every single part of the CommonApp and time for drafting and polishing two CommonApp essays. <br><br></h6></li>
+        <li class="cta-button"><%= link_to "Buy it Now", profile_path(:commonapp => true), {class: "button-buy"}%></li>
       </ul>
     </div>
 
-    <div class="three columns">
-      <ul class="pricing-table">
+    <div class="two columns" style="margin-right:20px">
+      <ul class="pricing-table" style="width: 234px">
         <li class="title"><h4><b>Supplement</b></h4></li>
         <li class="price">$40.00</li>
-        <li class="bullet-item"><h6 style="color: #4a4a4c; font-weight: normal">Complete coverage of the supplement for a school.<br> This includes time to brain storm and revise the supplement essays and any other short answers. </h6></li>
-        <li class="cta-button"><a class="button-buy" href="#">Buy it Now &raquo;</a></li>
+        <li class="bullet-item" style="height: 120px; padding-top:5px"><h6 style="color: #4a4a4c; font-weight: normal">Complete coverage of the supplement for a school.<br> This includes time to brain storm and revise the supplement essays and any other short answers. </h6></li>
+        <li class="cta-button"><%= link_to "Buy it Now", profile_path(:supplement => true), {class: "button-buy"}%></li>
       </ul>
     </div>
 
-    <div class="three columns">
-      <ul class="pricing-table">
+    <div class="three columns" style="margin-right:-60px">
+      <ul class="pricing-table" style="width: 234px">
         <li class="title"><h4><b>Additional Hours</b></h4></li>
         <li class="price">$18.00</li>
-        <li class="bullet-item"><h6 style="color: #4a4a4c; font-weight: normal"><br>An additional hour with your mentor that is not included in the previous packages.<br><br></h6></li>
-        <li class="cta-button"><a class="button-buy" href="#">Buy it Now &raquo;</a></li>
+        <li class="bullet-item" style="height: 120px"><h6 style="color: #4a4a4c; font-weight: normal">An additional hour with your mentor that is not included in the previous packages.<br><br></h6></li>
+        <li class="cta-button"><%= link_to "Buy it Now", profile_path(:add_hour => true), {class: "button-buy"}%></li>
       </ul>
     </div>
+
+
+    <div class="three columns">
+      <ul class="pricing-table" style="width: 250px">
+        <li class="title"><h4><b>Complete Package</b></h4></li>
+        <li class="price">$200.00</li>
+        <li class="bullet-item" style="height: 120px"><h6 style="color: #4a4a4c; font-weight: normal">Includes the First Hour, CommonApp, and Supplement packages plus ten hours with your mentor!</h6><br></li>
+        <li class="cta-button"><%= link_to "Buy it Now", profile_path(:complete => true), {class: "button-buy"}%></li>
+      </ul>
+    </div>
+
   </div>
 
   <br><br><br><br><br><br><br><br><br><br>
@@ -139,45 +405,6 @@
     <a href="#"><i class="fa fa-envelope"></i><span>Contact Me</span></a> 
   </div>
   -->
-
-
-<% else %>
-  <div class="profile">
-    <br><br><br><br><br><br><br>
-        <div class="profile-p-home" style="font-size:20px; color:black">Hello! My name is</div><br><br>
-    <h6 style="font-family: 'ProximaNova-Light';
-      font-size: 3.7em;
-      text-align: center;
-      color: #373738;
-      margin: -.1em 0 1em;
-      font-weight: 700;"><%=@user.name%></h6>
+<% end %> 
     
-    <div class="row">
-      <div class="four columns"></div>
-      <div class="four columns">
-        <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
-      </div>
-      <div class="four columns"></div>
-    </div>
-    <div class="profile-p">
-      You will be sending an email to <%=@user.name %> with your email address. <%=@user.name %> will contact you as soon as possible via email to set up a time to chat. Are you sure you want to send this email?
-    </div>
-    <br><br><br><br>
-    <div class="row">
-      <div class="three columns"></div>
-      <div class="two columns">
-        <div style="text-align: right">
-          <%= link_to "Yes", mentor_mailing_chat_path, {style: 'width:500px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
-        </div>
-      </div>
-      <div class="two columns"></div>
-      <div class="two columns">
-        <div style="text-align: left">
-          <%= link_to "No", profile_path(:confirmation => false), {style: 'width:200px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
-        </div>
-      </div>
-      <div class="three columns"></div>
-    </div>
-    <br><br><br><br><br><br><br><br>
-  </div>
-<% end %>
+

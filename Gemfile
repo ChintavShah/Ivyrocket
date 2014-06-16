@@ -8,6 +8,7 @@ gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 #gem 'mini_magick'
 gem 'figaro'
+gem 'activemerchant', :require => 'active_merchant'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'

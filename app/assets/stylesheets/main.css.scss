@@ -170,6 +170,7 @@ body {font-family: "ProximaNova-Light"; background: #fafafa; padding: 0; margin:
 }
 .button-buy {
 	background-color: #096312;
+	font-family:"ProximaNova-Light";
 	font-size: 20px;
 	font-weight: bold;
 	color: white;
@@ -363,9 +364,9 @@ background-image: linear-gradient(to left, #49DE5A 46%, #BFFFC6 100%);
 	font-size: 70px
 }
 .index-name {
-	color: #444446;
+	color: #dcdce1;
 	&:hover {
-		color: #545356;
+		color: #c3c0c9;
 	}
 }
 .index-info {
