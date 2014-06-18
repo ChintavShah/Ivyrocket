@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'IvyRocket'
-set :repo_url, 'https://github.com/andyliueagle/ivy.git'
+set :repo_url, 'git@github.com:andyliueagle/ivy.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -37,6 +37,9 @@ set :deploy_to, '/home/deploy/IvyRocket'
 
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
+ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
+ssh_options[:port] = 15335
 
 namespace :deploy do
 
