@@ -5,9 +5,9 @@ set :stage, :production
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, "192.184.90.193" #%w{deploy@example.com}
-role :web, "192.184.90.193" #%w{deploy@example.com}
-role :db,  "192.184.90.193" #%w{deploy@example.com}
+role :app, "deploy@192.184.90.193" #%w{deploy@example.com}
+role :web, "deploy@192.184.90.193" #%w{deploy@example.com}
+role :db,  "deploy@192.184.90.193" #%w{deploy@example.com}
 
 # Extended Server Syntax
 # ======================
@@ -17,7 +17,7 @@ role :db,  "192.184.90.193" #%w{deploy@example.com}
 # extended properties on the server.
 #server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
-server '192.184.90.193', user: 'deploy', port: 15335, roles: %w{web app}, keys: [File.join(ENV["HOME"], ".ssh", "id_rsa")]
+server '192.184.90.193', user: 'deploy', roles: %w{web app}, ssh_options: { port: 15335, forward_agent: true, keys: [File.join(ENV["HOME"], ".ssh", "id_rsa")]}
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
