@@ -1,8 +1,14 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
+set :default_shell, '/bin/bash -l'
+set :default_environment, {
+  'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+}
 set :application, 'IvyRocket'
 set :repo_url, 'git@github.com:andyliueagle/ivy.git'
+
+
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
