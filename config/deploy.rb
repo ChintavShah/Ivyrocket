@@ -38,9 +38,6 @@ set :deploy_to, '/home/deploy/IvyRocket'
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
-ssh_options[:port] = 15335
-
 namespace :deploy do
 
   desc 'Restart application'
