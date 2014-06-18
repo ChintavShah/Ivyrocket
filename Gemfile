@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+ruby '2.1.2'
 
 gem 'foundation-rails'
 gem 'devise'
@@ -9,6 +9,10 @@ gem 'rmagick', :require => 'RMagick'
 #gem 'mini_magick'
 gem 'figaro'
 gem 'activemerchant', :require => 'active_merchant'
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
