@@ -32,7 +32,10 @@ Rails.application.routes.draw do
   get 'profile/express_order/:slug' => 'users#express_order', :as => :express_order
   get 'order/' => 'orders#new', :as => :orders
   post 'order/' => 'orders#create'
-
+  match '/about_us',  to: "static_pages#about_us",        via: 'get'
+  match '/disclaimer',  to: "static_pages#disclaimer",        via: 'get'
+  match '/our_team',  to: "static_pages#our_team",        via: 'get'
+  match '/become_mentor',  to: "static_pages#become_mentor",        via: 'get'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

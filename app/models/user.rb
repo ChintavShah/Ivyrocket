@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   before_create :set_default_role
   before_save :set_slug, :if => :user_is_mentor
   mount_uploader :avatar, AvatarUploader
-  #validates_presence_of :avatar
   validates :name, uniqueness: true
   validates_presence_of	:bio,
     		:school_name,
@@ -20,7 +19,8 @@ class User < ActiveRecord::Base
     		:my_strengths,
     		:my_weaknesses,
     		:why_i_think_i_was_accepted,
-    		:biggest_piece_of_advice_to_high_school_students, :if => :user_is_mentor
+    		:biggest_piece_of_advice_to_high_school_students,
+        :avatar, :if => :user_is_mentor
 
 
   # Include default devise modules. Others available are:

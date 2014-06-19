@@ -3,7 +3,7 @@
      <div class="twelve columns header_nav">
      <div class="row">
         <ul id="menu-header" class="nav-bar horizontal left">
-        <li class="active"><%= link_to "IvyRocket", root_path %></li>
+        <div style="margin-top: -13px"><%= link_to image_tag('IvyRocketLogo3.jpg', width:155, height:30), root_path, style:"opacity:1;"%></div>
         </ul>
         <ul id="menu-header" class="nav-bar horizontal right">
         <!--
@@ -21,7 +21,7 @@
         
           <li><%= link_to "Pricing", pricing_path %></li>
           <li><%= link_to "Find a Mentor", mentors_path %></li>
-          <li><a href="#">Become a Mentor</a></li>
+          <li><a href="/become_mentor">Become a Mentor</a></li>
 
           <% if user_signed_in? %>
             <li class="has-flyout">

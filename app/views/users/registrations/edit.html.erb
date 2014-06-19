@@ -30,9 +30,10 @@
           <div><%= f.label :bio, :class => "label-signup" %><br />
           <%= f.text_area :bio %></div>
 
-          
-          <div><%= f.label :school_name, :class => "label-signup" %><br />
-          <%= f.text_field :school_name %></div>
+          <div class="dropdown-school"><%= f.label :school_name, :class => "label-signup" %><br />
+          <% school_array = ['Harvard University', 'Princeton University', 'Yale University', 'Massachusetts Institute of Technology', 'University of Pennsylvania', 'Brown University', 'Columbia University', 'Stanford University', 'Cornell University', 'Dartmouth University'].sort_by{|word| word} %>
+          <%=f.select(:school_name, options_for_select(Array[*school_array.collect {|v,i| [v,v] }]), prompt: 'Please Select') %></div>
+          <br><br>
 
           <div><%= f.label :degree_year, :class => "label-signup" %><br />
           <%= f.number_field :degree_year %></div>
@@ -52,22 +53,22 @@
           <div><%= f.label :other_waitlists, :class => "label-signup" %><br />
           <%= f.text_field :other_waitlists %></div>
           
-          <div><%= f.label "Applied early?", :class => "label-signup" %><i>if so, which schools?</i>
+          <div><%= f.label :applied_early, "Applied early?", :class => "label-signup" %><i>if so, which schools?</i>
           <%= f.text_field :applied_early %></div>
           
-          <div><%= f.label :SAT_total, :class => "label-signup" %><br />
+          <div><%= f.label :SAT_total, "SAT Total", :class => "label-signup" %><br />
           <%= f.number_field :SAT_total %></div>
 
-          <div><%= f.label :SAT_math, :class => "label-signup" %><br />
+          <div><%= f.label :SAT_math, "SAT Math", :class => "label-signup" %><br />
           <%= f.number_field :SAT_math %></div>
 
-          <div><%= f.label :SAT_reading, :class => "label-signup" %><br />
+          <div><%= f.label :SAT_reading, "SAT Reading", :class => "label-signup" %><br />
           <%= f.number_field :SAT_reading %></div>
 
-          <div><%= f.label :SAT_writing, :class => "label-signup" %><br />
+          <div><%= f.label :SAT_writing, "SAT Writing", :class => "label-signup" %><br />
           <%= f.number_field :SAT_writing %></div>
 
-          <div><%= f.label :ACT_composite, :class => "label-signup" %><br />
+          <div><%= f.label :ACT_composite, "ACT Composite", :class => "label-signup" %><br />
           <%= f.number_field :ACT_composite %></div>
           
           <div class="dropdown"><%= f.label "High school class rank", :class => "label-signup" %><br />
@@ -97,7 +98,7 @@
           <div><%= f.label :my_weaknesses, :class => "label-signup" %><br />
           <%= f.text_area :my_weaknesses %></div>
           
-          <div><%= f.label :why_i_think_i_was_accepted, :class => "label-signup" %><br />
+          <div><%= f.label :why_i_think_i_was_accepted, "Why I think I was accepted", :class => "label-signup" %><br />
           <%= f.text_area :why_i_think_i_was_accepted %></div>
 
           <div><%= f.label :biggest_piece_of_advice_to_high_school_students, :class => "label-signup" %><br />
@@ -120,7 +121,7 @@
         
         
         <% if current_user.has_role? :mentor %>
-          <div class="label-signup">Profile Image</div><br>
+          <div class="label-signup">Profile Image</div><i>(You won't see the file name but just click "Update" and it will be saved)</i><br>
           <%= f.file_field :avatar, :class=> "file-button" %>
           <br><br><br>
         <% end %>
