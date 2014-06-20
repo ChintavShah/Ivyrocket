@@ -418,6 +418,12 @@ background-image: linear-gradient(to left, #49DE5A 46%, #BFFFC6 100%);
 		color:#c8c6cf;
 	}
 }
+.other-links-blue {
+	color:#a8e6e7;
+	&:hover {
+		color:#90cedd;
+	}
+}
 
 /*disclaimer page*/
 .disclaimer-home{
