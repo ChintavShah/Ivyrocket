@@ -67,7 +67,7 @@ namespace :deploy do
   end
   
   task :symlink_config do
-    run "ln -nfs #{shared_path}/uploads #{release_path}/public/uploads"
+    run "ln -nfs #{shared_path}/uploads #{release_path}/public/public/uploads"
   end
 
 end
