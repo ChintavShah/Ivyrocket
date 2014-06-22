@@ -1,6 +1,10 @@
 <!-- ######################## Header ######################## -->
         <header>
-          <% if !flash.blank? %>
+          <% if flash[:alert] == "Your session expired. Please sign in again to continue." %>
+              <% flash[:timedout] = '  ' %>
+          <% end %>
+          <% if !flash.blank? && flash[:timedout] != "  " %>
+              <% p "FLASH EXECUTED" %>
               <br><br><br><br><br><br>
               <div class = "row">
                 <div class="four columns"></div>
@@ -22,8 +26,9 @@
                   <div class="four columns"></div>
                   <div class="four columns">
                     <div class="alert-box alert secondary">
-                      <h4 style="text-align:center"><%= notice %><br>
-                      <%= alert %></h4>
+                      <h4 style="text-align:center"><%= alert %>
+                      <%= notice %>        
+                      </h4>
                     </div>
                   </div>
                   <div class="four columns"></div>
