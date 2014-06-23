@@ -127,7 +127,7 @@
         
         
         <% if current_user.has_role? :mentor %>
-          <div class="label-signup">Profile Image</div><i>(You won't see the file name but just click "Update" and it will be saved)</i><br>
+          <div class="label-signup">Profile Image</div><i>(You won't see the file name but just click "Update" and it will be saved; file cannot be bigger than 1MB.)</i><br>
           <%= f.file_field :avatar, :class=> "file-button" %>
           <br><br><br>
         <% end %>
