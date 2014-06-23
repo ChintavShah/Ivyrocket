@@ -42,7 +42,7 @@ set :repo_url, 'git@github.com:andyliueagle/ivy.git'
 set :deploy_to, '/home/deploy/IvyRocket'
 
 set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/public/uploads}
 
 
 namespace :deploy do
@@ -64,10 +64,6 @@ namespace :deploy do
       #   execute :rake, 'cache:clear'
       # end
     end
-  end
-  
-  task :symlink_config do
-    run "ln -nfs #{shared_path}/uploads #{release_path}/public/public/uploads"
   end
 
 end
