@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   		flash[:success] = "You do not have access to this page"
   		redirect_to root_url
   	elsif current_user.has_role? :admin
-  		@users = User.all
+  		@users = User.order('id ASC')
   	end
   end
 
