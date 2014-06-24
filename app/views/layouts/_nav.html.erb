@@ -26,15 +26,18 @@
           <% if user_signed_in? %>
             <li class="has-flyout">
               <% if current_user.has_role? :mentor %>
-              <%= link_to "Account", "/profile/#{current_user.slug}" %>
+                <%= link_to "Account", "/profile/#{current_user.slug}" %>
               <% else %>
-              <%= link_to "Account", edit_user_registration_path %>
+                <%= link_to "Account", edit_user_registration_path %>
               <% end %>
               <ul class="flyout">
                 <% if current_user.has_role? :mentor %>
-                <li class="has-flyout"><%= link_to "Profile", "/profile/#{current_user.slug}" %></li>
+                  <li class="has-flyout"><%= link_to "Profile", "/profile/#{current_user.slug}" %></li>
                 <% end %>
                 <li class="has-flyout"><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                <% if current_user.has_role? :admin %>
+                  <li class="has-flyout"><%= link_to "Users", user_index_path %></li>
+                <% end %>
                 <li class="has-flyout">
                   <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
                 </li>

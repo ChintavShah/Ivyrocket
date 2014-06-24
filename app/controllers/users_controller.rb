@@ -5,6 +5,33 @@ class UsersController < ApplicationController
     @users = User.with_role :mentor
   end
 
+  def user_index
+  	if current_user.nil? || ((current_user.has_role? :admin) == false)
+  		flash[:success] = "You do not have access to this page"
+  		redirect_to root_url
+  	elsif current_user.has_role? :admin
+  		@users = User.all
+  	end
+  end
+
+  def user_mentor
+  	if current_user.nil? || ((current_user.has_role? :admin) == false)
+  		flash[:success] = "You do not have access to this page"
+  		redirect_to root_url
+  	elsif current_user.has_role? :admin
+  		user = User.find_by_id!(params[:id])
+  		if user.has_role? :mentor
+  			user.remove_role :mentor
+  			flash[:success] = "#{user.name} removed of mentor role."
+  			redirect_to user_index_path
+  		elsif !(user.has_role? :mentor)
+  			user.add_role :mentor
+  			flash[:success] = "#{user.name} made into mentor."
+  			redirect_to user_index_path
+  		end
+  	end
+  end
+
   def show
   	@confirm = params[:confirmation]
   	@first_hour = params[:first_hour]

@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   match '/disclaimer',  to: "static_pages#disclaimer",        via: 'get'
   match '/our_team',  to: "static_pages#our_team",        via: 'get'
   match '/become_mentor',  to: "static_pages#become_mentor",        via: 'get'
+  get 'user_index' => 'users#user_index', :as => :user_index
+  get 'user_mentor/:id' => 'users#user_mentor', :as => :user_mentor
 
 
   # The priority is based upon order of creation: first created -> highest priority.

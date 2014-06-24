@@ -1,0 +1,46 @@
+<div class="heading pricing">
+  <h1 class="welcome_text white">
+    Users
+  </h1>
+  <h3 class="white" style="text-align:center; margin: 10px 0 0 0"><br><br>
+  </h3>
+</div>
+
+<div class="pricing-background" style="padding-bottom:15em">
+	<% if !flash.blank? %>
+		<div class = "row">
+			<div class="four columns"></div>
+			<div class="four columns">
+			  <div class="alert-box alert secondary">
+			    <h4 style="text-align:center">
+			      <% flash.each do |key, value| %>
+			        <%= value %>
+			      <% end %>
+			    </h4>
+			  </div>
+			</div>
+			<div class="four columns"></div>
+		</div>
+	<% end %>
+	<ul>
+		<% length = @users.length %>
+		<% @users.each_with_index do |user, index| %>
+			<div class="row" style="padding-top:1em; padding-bottom:1em">
+				<div class="one column"></div>
+				<div class="two columns"><%= image_tag user.avatar.thumb.url %></div>
+				<div class="three columns" style="text-align:center; padding-top:1em">
+					<h1><%= user.name %></h1>
+				</div>
+				<div class="two columns" style="text-align:center; padding-top:2em">
+					<h3>Mentor? <%= user.has_role? :mentor %></h3>
+				</div>
+				<div class="two columns" style="text-align:center; padding-top:2em">
+					<%= link_to "Mentor", user_mentor_path(:id => user.id), {style: 'width:100px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
+				</div>
+				<div class="two columns"></div>
+			</div>
+			<% if !((index + 1) == length) %><HR WIDTH="100%" SIZE="3" NOSHADE><% end %>
+		<% end %>
+	</ul>
+</div>
+
