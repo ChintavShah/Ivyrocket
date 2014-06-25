@@ -6,7 +6,7 @@
           <% if !flash.blank? && flash[:timedout] != "  " %>
               <% p "FLASH EXECUTED" %>
               <br><br><br><br><br><br>
-              <div class = "row">
+              <div class = "row" style="height:0px">
                 <div class="four columns"></div>
                 <div class="four columns">
                   <div class="alert-box alert secondary">
@@ -22,7 +22,7 @@
           <% else %>
             <% if (!alert.nil? || !notice.nil?) %>
                 <br><br><br><br><br><br>
-                <div class = "row">
+                <div class = "row" style="height:0px">
                   <div class="four columns"></div>
                   <div class="four columns">
                     <div class="alert-box alert secondary">
