@@ -73,17 +73,17 @@ class UsersController < ApplicationController
 	elsif @package == 'commonapp'
 		mentor_array = @student.orders.map{|x| x[:mentor_id]}
 		if mentor_array.include? @mentor.id
-			response = EXPRESS_GATEWAY.setup_purchase(6000,
+			response = EXPRESS_GATEWAY.setup_purchase(9000,
 		      :ip => request.remote_ip,
 		      :return_url => "http://www.ivyrocket.com/#{orders_path}",
 		      :cancel_return_url => "http://www.ivyrocket.com",
-		      :subtotal => 6000,
+		      :subtotal => 9000,
 		      :shipping => 0,
 		      :handling => 0,
 		      :tax =>      0,
 		      :items => [{ :name => "#{@mentor.name} | CommonApp | #{@student.name}",
 		                  :quantity => 1,
-		                  :amount   => 6000,
+		                  :amount   => 9000,
 		                  :description => "CommonApp package with #{@mentor.name}"}]
 			)
 			redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
@@ -94,17 +94,17 @@ class UsersController < ApplicationController
 	elsif @package == 'supplement'
 		mentor_array = @student.orders.map{|x| x[:mentor_id]}
 		if mentor_array.include? @mentor.id
-			response = EXPRESS_GATEWAY.setup_purchase(4000,
+			response = EXPRESS_GATEWAY.setup_purchase(5000,
 		      :ip => request.remote_ip,
 		      :return_url => "http://www.ivyrocket.com/#{orders_path}",
 		      :cancel_return_url => "http://www.ivyrocket.com",
-		      :subtotal => 4000,
+		      :subtotal => 5000,
 		      :shipping => 0,
 		      :handling => 0,
 		      :tax =>      0,
 		      :items => [{ :name => "#{@mentor.name} | Supplement | #{@student.name}",
 		                  :quantity => 1,
-		                  :amount   => 4000,
+		                  :amount   => 5000,
 		                  :description => "Supplement package with #{@mentor.name}"}]
 			)
 			redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
@@ -115,17 +115,17 @@ class UsersController < ApplicationController
 	elsif @package == 'add hour'
 		mentor_array = @student.orders.map{|x| x[:mentor_id]}
 		if mentor_array.include? @mentor.id
-			response = EXPRESS_GATEWAY.setup_purchase(1800,
+			response = EXPRESS_GATEWAY.setup_purchase(2500,
 		      :ip => request.remote_ip,
 		      :return_url => "http://www.ivyrocket.com/#{orders_path}",
 		      :cancel_return_url => "http://www.ivyrocket.com",
-		      :subtotal => 1800,
+		      :subtotal => 2500,
 		      :shipping => 0,
 		      :handling => 0,
 		      :tax =>      0,
 		      :items => [{ :name => "#{@mentor.name} | Additional Hour | #{@student.name}",
 		                  :quantity => 1,
-		                  :amount   => 1800,
+		                  :amount   => 2500,
 		                  :description => "Additional hour with #{@mentor.name}"}]
 			)
 		redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
@@ -134,17 +134,17 @@ class UsersController < ApplicationController
 			redirect_to root_path
 		end
 	elsif @package == 'complete'
-		response = EXPRESS_GATEWAY.setup_purchase(20000,
+		response = EXPRESS_GATEWAY.setup_purchase(29999,
 	      :ip => request.remote_ip,
 	      :return_url => "http://www.ivyrocket.com/#{orders_path}",
 	      :cancel_return_url => "http://www.ivyrocket.com",
-	      :subtotal => 20000,
+	      :subtotal => 29999,
 	      :shipping => 0,
 	      :handling => 0,
 	      :tax =>      0,
 	      :items => [{ :name => "#{@mentor.name} | Complete Package | #{@student.name}",
 	                  :quantity => 1,
-	                  :amount   => 20000,
+	                  :amount   => 29999,
 	                  :description => "Complete package with #{@mentor.name}"}]
 		)
 		redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)

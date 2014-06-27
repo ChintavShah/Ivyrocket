@@ -9,7 +9,7 @@
     margin: -.1em 0 1em;
     font-weight: 700;"><%=@user.name%></h6>
   
-  <div class="row" style="padding-bottom:250px">
+  <div class="row" style="padding-bottom:20em">
     <div class="three columns">
       <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
     </div>
@@ -50,7 +50,7 @@
     margin: -.1em 0 1em;
     font-weight: 700;"><%=@user.name%></h6>
   
-  <div class="row" style="padding-bottom:250px">
+  <div class="row" style="padding-bottom:20em">
     <div class="three columns">
       <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
     </div>
@@ -93,14 +93,14 @@
     margin: -.1em 0 1em;
     font-weight: 700;"><%=@user.name%></h6>
   
-  <div class="row" style="padding-bottom:250px">
+  <div class="row" style="padding-bottom:20em">
     <div class="three columns">
       <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
     </div>
     <div class="one column"></div>
     <div class="seven columns">
       <div class="profile-p" style="margin-top:-50px; border-bottom-style:none">
-        You will be purchasing the CommonApp package with <%=@user.name %> for $60. This will cover the walk-through of the CommonApp and the CommonApp application essays (does not include Supplement essays). You must purchase the first hour with <%=@user.name %> before you can purchase this package. Are you sure you want to purchase? (you will be redirected to Paypal)
+        You will be purchasing the CommonApp package with <%=@user.name %> for $90. This will cover the walk-through of the CommonApp and the CommonApp application essays (does not include Supplement essays). You must purchase the first hour with <%=@user.name %> before you can purchase this package. Are you sure you want to purchase? (you will be redirected to Paypal)
       </div>
       <br><br>
       <div class="row">
@@ -136,14 +136,14 @@
     margin: -.1em 0 1em;
     font-weight: 700;"><%=@user.name%></h6>
   
-  <div class="row" style="padding-bottom:250px">
+  <div class="row" style="padding-bottom:20em">
     <div class="three columns">
       <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
     </div>
     <div class="one column"></div>
     <div class="seven columns">
       <div class="profile-p" style="margin-top:-40px; border-bottom-style:none">
-        You will be purchasing the Supplement package with <%=@user.name %> for $40. This will cover the supplement for <%= @user.school_name %> (essays and short answers). You must purchase the first hour with <%=@user.name %> before you can purchase this package. Are you sure you want to purchase? (you will be redirected to Paypal)
+        You will be purchasing the Supplement package with <%=@user.name %> for $50. This will cover the supplement for <%= @user.school_name %> (essays and short answers). You must purchase the first hour with <%=@user.name %> before you can purchase this package. Are you sure you want to purchase? (you will be redirected to Paypal)
       </div>
       <br><br>
       <div class="row">
@@ -179,14 +179,14 @@
     margin: -.1em 0 1em;
     font-weight: 700;"><%=@user.name%></h6>
   
-  <div class="row" style="padding-bottom:250px">
+  <div class="row" style="padding-bottom:20em">
     <div class="three columns">
       <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
     </div>
     <div class="one column"></div>
     <div class="seven columns">
       <div class="profile-p" style="margin-top:-40px; border-bottom-style:none">
-        You will be purchasing an additional hour with <%=@user.name %> for $18. You can use this additional hour with <%=@user.name %> for anything you want to discuss. You must purchase the first hour with <%=@user.name %> before you can purchase this package. Are you sure you want to purchase? (you will be redirected to Paypal)
+        You will be purchasing an additional hour with <%=@user.name %> for $25. You can use this additional hour with <%=@user.name %> for anything you want to discuss. You must purchase the first hour with <%=@user.name %> before you can purchase this package. Are you sure you want to purchase? (you will be redirected to Paypal)
       </div>
       <br><br>
       <div class="row">
@@ -222,14 +222,14 @@
     margin: -.1em 0 1em;
     font-weight: 700;"><%=@user.name%></h6>
   
-  <div class="row" style="padding-bottom:250px">
+  <div class="row" style="padding-bottom:20em">
     <div class="three columns">
       <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
     </div>
     <div class="one column"></div>
     <div class="seven columns">
       <div class="profile-p" style="margin-top:-20px; border-bottom-style:none">
-        You will be purchasing the Complete Package with <%=@user.name %> for $200, which includes the CommonApp package, the Supplement package for <%=@user.school_name%>, and ten hours with <%=@user.name%>. Are you sure you want to purchase? (you will be redirected to Paypal)
+        You will be purchasing the Complete Package with <%=@user.name %> for $299.99, which includes the CommonApp package, the Supplement package for <%=@user.school_name%>, and ten hours with <%=@user.name%>. Are you sure you want to purchase? (you will be redirected to Paypal)
       </div>
       <br><br>
       <div class="row">
@@ -311,8 +311,11 @@
   <div class="profile-p"><%=@user.bio%></div>
 
   <div class="profile-p">
+    <!--
     <h3 class="white" style="display:inline">Main high school awards: <h4 class="white" style="font-size:20px; display:inline"><%=@user.main_high_school_awards%></h4></h3><br><br>
-    <h3 class="white" style="display:inline">Main extracurricular activities: <h4 class="white" style="font-size:20px; display:inline"><%=@user.main_extracurricular_activities%></h4></h3><br><br>
+    -->
+    <h3 class="white" style="display:inline">Main high school extracurricular activities: <h4 class="white" style="font-size:20px; display:inline"><%=@user.main_extracurricular_activities%></h4></h3><br><br>
+    <!--
     <% unless @user.job_experience.blank? %>
       <h3 class="white" style="display:inline">Job experience: <h4 class="white" style="font-size:20px; display:inline"><%=@user.job_experience%></h4></h3><br><br>
     <% end %>
@@ -322,12 +325,15 @@
     <% unless @user.summer_activities.blank? %>
       <h3 class="white" style="display:inline">Summer activities: <h4 class="white" style="font-size:20px; display:inline"><%=@user.summer_activities%></h4></h3><br><br>
     <% end %>
+    -->
   </div>
 
   <div class="profile-p">
     <h3 class="white" style="font-size:33px"> Overall reflections on the college application process: </h3>
+    <!--
     <h3 class="white" style="display:inline">My strengths: <h4 class="white" style="font-size:20px; display:inline"><%=@user.my_strengths%></h4></h3><br><br>
     <h3 class="white" style="display:inline">My weaknesses: <h4 class="white" style="font-size:20px; display:inline"><%=@user.my_weaknesses%></h4></h3><br><br>
+    -->
     <h3 class="white" style="display:inline">Why I think I was accepted: <h4 class="white" style="font-size:20px; display:inline"><%=@user.why_i_think_i_was_accepted%></h4></h3><br><br>
     <h3 class="white" style="display:inline">Biggest piece of advice to high school students: <h4 class="white" style="font-size:20px; display:inline"><%=@user.biggest_piece_of_advice_to_high_school_students%></h4></h3><br><br>
   </div> 
@@ -349,7 +355,7 @@
     <div class="two columns" style="margin-right:20px">
       <ul class="pricing-table" style="width: 234px">
         <li class="title"><h4><b>CommonApp</b></h4></li>
-        <li class="price">$60.00</li>
+        <li class="price">$90.00</li>
         <li class="bullet-item" style="height: 120px"><h6 style="color: #4a4a4c; font-weight: normal">Walk-through of every single part of the CommonApp and time for drafting and polishing two CommonApp essays. <br><br></h6></li>
         <li class="cta-button"><%= link_to "Buy it Now", profile_path(:commonapp => true), {class: "button-buy"}%></li>
       </ul>
@@ -358,7 +364,7 @@
     <div class="two columns" style="margin-right:20px">
       <ul class="pricing-table" style="width: 234px">
         <li class="title"><h4><b>Supplement</b></h4></li>
-        <li class="price">$40.00</li>
+        <li class="price">$50.00</li>
         <li class="bullet-item" style="height: 120px; padding-top:5px"><h6 style="color: #4a4a4c; font-weight: normal">Complete coverage of the supplement for a school.<br> This includes time to brain storm and revise the supplement essays and any other short answers. </h6></li>
         <li class="cta-button"><%= link_to "Buy it Now", profile_path(:supplement => true), {class: "button-buy"}%></li>
       </ul>
@@ -367,7 +373,7 @@
     <div class="three columns" style="margin-right:-60px">
       <ul class="pricing-table" style="width: 234px">
         <li class="title"><h4><b>Additional Hours</b></h4></li>
-        <li class="price">$18.00</li>
+        <li class="price">$25.00</li>
         <li class="bullet-item" style="height: 120px"><h6 style="color: #4a4a4c; font-weight: normal">An additional hour with your mentor that is not included in the previous packages.<br><br></h6></li>
         <li class="cta-button"><%= link_to "Buy it Now", profile_path(:add_hour => true), {class: "button-buy"}%></li>
       </ul>
@@ -377,7 +383,7 @@
     <div class="three columns">
       <ul class="pricing-table" style="width: 250px">
         <li class="title"><h4><b>Complete Package</b></h4></li>
-        <li class="price">$200.00</li>
+        <li class="price">$299.99</li>
         <li class="bullet-item" style="height: 120px"><h6 style="color: #4a4a4c; font-weight: normal">Includes the First Hour, CommonApp, and Supplement packages plus ten hours with your mentor!</h6><br></li>
         <li class="cta-button"><%= link_to "Buy it Now", profile_path(:complete => true), {class: "button-buy"}%></li>
       </ul>

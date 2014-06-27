@@ -83,12 +83,13 @@
           <%=f.select(:class_rank, options_for_select(Array[*the_array.collect {|v,i| [v,v] }])) %></div>
           <br><br>
           <!-- -->
+          <!--
           <div><%= f.label :main_high_school_awards, :class => "label-signup" %><br />
           <%= f.text_area :main_high_school_awards %></div>
-          
-          <div><%= f.label :main_extracurricular_activities, :class => "label-signup" %><br />
+          -->
+          <div><%= f.label :main_extracurricular_activities, "Main high school extracurricular activities: " :class => "label-signup" %><br />
           <%= f.text_area :main_extracurricular_activities %></div>
-          
+          <!--
           <div><%= f.label :job_experience, :class => "label-signup" %><br />
           <%= f.text_area :job_experience %></div>
           
@@ -103,7 +104,7 @@
           
           <div><%= f.label :my_weaknesses, :class => "label-signup" %><br />
           <%= f.text_area :my_weaknesses %></div>
-          
+          -->
           <div><%= f.label :why_i_think_i_was_accepted, "Why I think I was accepted", :class => "label-signup" %><br />
           <%= f.text_area :why_i_think_i_was_accepted %></div>
 

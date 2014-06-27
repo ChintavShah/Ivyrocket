@@ -14,10 +14,10 @@ class User < ActiveRecord::Base
     		:applied_early,
     		:SAT_total,
     		:class_rank,
-    		:main_high_school_awards,
+    		#:main_high_school_awards,
     		:main_extracurricular_activities,
-    		:my_strengths,
-    		:my_weaknesses,
+    		#:my_strengths,
+    		#:my_weaknesses,
     		:why_i_think_i_was_accepted,
     		:biggest_piece_of_advice_to_high_school_students,
         :avatar, :if => :user_is_mentor
