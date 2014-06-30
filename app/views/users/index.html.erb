@@ -26,7 +26,9 @@
 			    		<ul class="index-info">
 			    			<li><h2 class="white"><%= user.school_name %></h2></li>
 			    			<li><h3 class="white"><%= user.major %></h3></li>
-			    			<li><h4 class="white"><%= user.degree_year %></h4></li>
+			    			<% if !user.degree_year.blank? %>
+			    			<li><h4 class="white">Class of <%= user.degree_year %></h4></li>
+			    			<% end %>
 			    			<li><h4 small class="white"><%= user.bio %></h4></li>
 			    		</ul>
 					</div>

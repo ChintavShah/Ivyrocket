@@ -253,6 +253,49 @@
   <br><br><br><br><br><br><br><br>
 </div>
 
+<% elsif @junior == 'true' %>
+
+<div class="profile">
+  <br><br><br><br><br><br><br>
+      <div class="profile-p-home" style="font-size:20px; color:black">Hello! My name is</div><br><br>
+  <h6 style="font-family: 'ProximaNova-Light';
+    font-size: 3.7em;
+    text-align: center;
+    color: #373738;
+    margin: -.1em 0 1em;
+    font-weight: 700;"><%=@user.name%></h6>
+  
+  <div class="row" style="padding-bottom:20em">
+    <div class="three columns">
+      <div class="home-circle" style="background:#999 url(<%=@user.avatar.profile.url %>) 80% 0%; background-repeat:no-repeat"></div>
+    </div>
+    <div class="one column"></div>
+    <div class="seven columns">
+      <div class="profile-p" style="margin-top:-20px; border-bottom-style:none">
+        You will be purchasing the Junior Only Package with <%=@user.name %> for $50.00, which includes two one-hour sessions. In the first hour, <%=@user.name %> will create a customized admissions strategy for you, including creative action steps for your junior year to help make your application stand out. At the end of your junior year you will meet again for an hour to see where you are and how you can steer yourself in the right direction before senior year. Are you sure you want to purchase? (you will be redirected to Paypal)
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="two columns"></div>
+        <div class="three columns">
+          <div style="text-align: right">
+            <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), express_order_path(:package => 'junior'), {style: 'text-align:center; padding-left:0px'}%>
+          </div>
+        </div>
+        <div class="two columns"></div>
+        <div class="two columns">
+          <div style="text-align: left">
+            <%= link_to "No", profile_path(:confirmation => false), {style: 'width:200px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
+          </div>
+        </div>
+        <div class="three columns"></div>
+      </div> 
+    </div>
+    <div class="one column"></div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+</div>
+
 <% else %>
   <div class="profile">
   <br><br><br><br><br><br><br>
@@ -341,9 +384,9 @@
 
 
 
-  <div class="row" style="padding-top: 20px; width: 1300px">
+  <div class="row" style="padding-top: 20px; width: 1500px">
     
-    <div class="two columns" style="margin-right:20px">
+    <div class="two columns" style="margin-right:-10px">
       <ul class="pricing-table" style="width: 234px;">
         <li class="title"><h4><b>First Hour</b></h4></li>
         <li class="price">$40.00</li>
@@ -352,7 +395,7 @@
       </ul>
     </div>
 
-    <div class="two columns" style="margin-right:20px">
+    <div class="two columns" style="margin-right:-10px">
       <ul class="pricing-table" style="width: 234px">
         <li class="title"><h4><b>CommonApp</b></h4></li>
         <li class="price">$90.00</li>
@@ -361,7 +404,7 @@
       </ul>
     </div>
 
-    <div class="two columns" style="margin-right:20px">
+    <div class="two columns" style="margin-right:-10px">
       <ul class="pricing-table" style="width: 234px">
         <li class="title"><h4><b>Supplement</b></h4></li>
         <li class="price">$50.00</li>
@@ -370,7 +413,7 @@
       </ul>
     </div>
 
-    <div class="three columns" style="margin-right:-60px">
+    <div class="two columns" style="margin-right:2px">
       <ul class="pricing-table" style="width: 234px">
         <li class="title"><h4><b>Additional Hours</b></h4></li>
         <li class="price">$25.00</li>
@@ -380,12 +423,21 @@
     </div>
 
 
-    <div class="three columns">
+    <div class="two columns">
       <ul class="pricing-table" style="width: 250px">
         <li class="title"><h4><b>Complete Package</b></h4></li>
         <li class="price">$299.99</li>
         <li class="bullet-item" style="height: 120px"><h6 style="color: #4a4a4c; font-weight: normal">Includes the First Hour, CommonApp, and Supplement packages plus ten hours with your mentor!</h6><br></li>
         <li class="cta-button"><%= link_to "Buy it Now", profile_path(:complete => true), {class: "button-buy"}%></li>
+      </ul>
+    </div>
+
+    <div class="two columns">
+      <ul class="pricing-table" style="width:234px">
+        <li class="title"><h4><b>Junior Package</b></h4></li>
+        <li class="price">$50.00</li>
+        <li class="bullet-item" style="height: 120px; "><h6 style="color: #4a4a4c; font-weight: normal">Consists of an hour of customized admissions strategy and an hour check-in session to steer you in the right direction before senior year.</h6><br></li>
+        <li class="cta-button"><%= link_to "Buy it Now", profile_path(:junior => true), {class: "button-buy"}%></li>
       </ul>
     </div>
 

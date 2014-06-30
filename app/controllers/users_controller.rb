@@ -39,6 +39,7 @@ class UsersController < ApplicationController
   	@supplement = params[:supplement]
   	@add_hour = params[:add_hour]
   	@complete = params[:complete]
+  	@junior = params[:junior]
   	@user = User.find_by_slug!(params[:slug])
   end
 
@@ -146,6 +147,21 @@ class UsersController < ApplicationController
 	                  :quantity => 1,
 	                  :amount   => 29999,
 	                  :description => "Complete package with #{@mentor.name}"}]
+		)
+		redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
+	elsif @package == 'junior'
+		response = EXPRESS_GATEWAY.setup_purchase(5000,
+	      :ip => request.remote_ip,
+	      :return_url => "http://www.ivyrocket.com/#{orders_path}",
+	      :cancel_return_url => "http://www.ivyrocket.com",
+	      :subtotal => 5000,
+	      :shipping => 0,
+	      :handling => 0,
+	      :tax =>      0,
+	      :items => [{ :name => "#{@mentor.name} | Junior Package | #{@student.name}",
+	                  :quantity => 1,
+	                  :amount   => 5000,
+	                  :description => "Junior package with #{@mentor.name}"}]
 		)
 		redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
 	end

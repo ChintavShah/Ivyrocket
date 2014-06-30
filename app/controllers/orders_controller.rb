@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 		@order.ip_address = request.remote_ip
 		if @order.save
 			if @order.purchase
-				flash[:success] = "Purchase successful!"
+				flash[:success] = "Purchase successful! Thank you so much!"
 				information = @order.name.split(" | ")
 			  	@mentor = User.find_by_name(information[0])
 			  	@package = information[1]
@@ -26,6 +26,8 @@ class OrdersController < ApplicationController
 			  		MentorMailer.additional_hour_purchase_email(@mentor, @student).deliver
 			  	elsif @package == 'Complete Package'
 			  		MentorMailer.complete_purchase_email(@mentor,@student).deliver
+			  	elsif @package == 'Junior Package'
+			  		MentorMailer.junior_purchase_email(@mentor,@student).deliver
 			  	end
 				redirect_to root_path
 			else

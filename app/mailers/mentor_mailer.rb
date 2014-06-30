@@ -42,4 +42,10 @@ class MentorMailer < ActionMailer::Base
   	@mentor = mentor
   	mail(to: ["#{mentor.name} <#{mentor.email}>", "theivyrocket@gmail.com"], subject: "[IvyRocket] Complete Package Purchase")
   end
+
+  def junior_purchase_email(mentor, student)
+    @student = student
+    @mentor = mentor
+    mail(to: ["#{mentor.name} <#{mentor.email}>", "theivyrocket@gmail.com"], subject: "[IvyRocket] Junior Package Purchase")
+  end
 end
