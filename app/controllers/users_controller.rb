@@ -2,7 +2,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :mentor_mailing]
 
   def index
-    @users = User.with_role :mentor
+    mentors = User.with_role :mentor
+    mentors_with_avatar = mentors.reject { |x| x.avatar.blank? }
+    @users = mentors_with_avatar.shuffle
   end
 
   def user_index
