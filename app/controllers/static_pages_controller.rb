@@ -8,6 +8,9 @@ class StaticPagesController < ApplicationController
 	def about_us
 	end
 
+	def contact_us
+	end
+
 	def disclaimer
 	end
 
@@ -15,5 +18,8 @@ class StaticPagesController < ApplicationController
 	end
 
 	def become_mentor
+	end
+
+	def ivyrocket_process
 	end
 end

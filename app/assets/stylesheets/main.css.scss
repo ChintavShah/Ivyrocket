@@ -66,7 +66,7 @@
 }
 */
 
-body {font-family: "ProximaNova-Light"; background: #fafafa; padding: 0; margin:0;}
+body {font-family: "ProximaNova-Light"; background: #fafafa; padding: 0; margin:0}
 
 .row {width: 1200px}
 
@@ -424,9 +424,15 @@ background-image: linear-gradient(to left, #49DE5A 46%, #BFFFC6 100%);
 		color:#90cedd;
 	}
 }
-
+.email-links {
+	color:#87efec;
+	&:hover {
+		color:#74d1cf;
+	}
+}
 /*disclaimer page*/
 .disclaimer-home{
+  font-family:"ProximaNova-Light";
   font-size:72px;
   text-align:center;
 }

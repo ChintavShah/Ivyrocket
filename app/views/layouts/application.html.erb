@@ -15,14 +15,14 @@
   </head>
   <div id="wrap">
     <%= render 'layouts/nav' %>
-    <% if ((((((params[:action] == "show" && params[:controller] == "users") || (params[:action] == "new" && params[:controller] == "orders")) || (params[:action] == "index" && params[:controller] == "users")) || (params[:action] == "about_us" && params[:controller] == "static_pages")) || (params[:action] == "disclaimer" && params[:controller] == "static_pages")) || (params[:action] == "our_team" && params[:controller] == "static_pages")) || (params[:action] == "become_mentor" && params[:controller] == "static_pages")%>
+    <% if ((((((((params[:action] == "show" && params[:controller] == "users") || (params[:action] == "new" && params[:controller] == "orders")) || (params[:action] == "index" && params[:controller] == "users")) || (params[:action] == "about_us" && params[:controller] == "static_pages")) || (params[:action] == "disclaimer" && params[:controller] == "static_pages")) || (params[:action] == "our_team" && params[:controller] == "static_pages")) || (params[:action] == "become_mentor" && params[:controller] == "static_pages")) || (params[:action] == "ivyrocket_process" && params[:controller] == "static_pages")) || (params[:action] == "contact_us" && params[:controller] == "static_pages")%>
       <div class="profile-body" style="margin:0">
     <% end %>
         <body>    
           <%= yield %>
           <%= javascript_include_tag "application" %>
         </body>
-    <% if ((((((params[:action] == "show" && params[:controller] == "users") || (params[:action] == "new" && params[:controller] == "orders")) || (params[:action] == "index" && params[:controller] == "users")) || (params[:action] == "about_us" && params[:controller] == "static_pages")) || (params[:action] == "disclaimer" && params[:controller] == "static_pages")) || (params[:action] == "our_team" && params[:controller] == "static_pages")) || (params[:action] == "become_mentor" && params[:controller] == "static_pages")%>
+    <% if ((((((((params[:action] == "show" && params[:controller] == "users") || (params[:action] == "new" && params[:controller] == "orders")) || (params[:action] == "index" && params[:controller] == "users")) || (params[:action] == "about_us" && params[:controller] == "static_pages")) || (params[:action] == "disclaimer" && params[:controller] == "static_pages")) || (params[:action] == "our_team" && params[:controller] == "static_pages")) || (params[:action] == "become_mentor" && params[:controller] == "static_pages")) || (params[:action] == "ivyrocket_process" && params[:controller] == "static_pages")) || (params[:action] == "contact_us" && params[:controller] == "static_pages")%>
       </div>
     <% end %>
     <!--<%= debug(params) if Rails.env.development? %>-->
