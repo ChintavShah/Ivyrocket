@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725150914) do
+ActiveRecord::Schema.define(version: 20140725162041) do
+
+  create_table "chat_limits", force: true do |t|
+    t.string   "email"
+    t.integer  "chattimes"
+    t.datetime "chatstamp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "chat_limits", ["email"], name: "index_chat_limits_on_email", unique: true
 
   create_table "orders", force: true do |t|
     t.string   "express_token"

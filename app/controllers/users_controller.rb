@@ -47,34 +47,35 @@ class UsersController < ApplicationController
 
   def mentor_mailing
   	@user = current_user
-  	if @user.chattimes.blank?
+  	if ChatLimit.find_by_email(@user.email).blank?
 	  	@mentor = User.find_by_slug(params[:slug])
 	  	MentorMailer.freechat_email(@user, @mentor).deliver
 	  	MentorMailer.freechat_email_student(@user, @mentor).deliver
 	  	flash[:success] = "Email successfully sent!"
-	  	@user.chattimes = 1
-	  	@user.chatstamp = Time.now
+	  	ChatLimit.create(email: @user.email, chattimes: 1, chatstamp: Time.now)
 	  	puts "HEREHERERERER"
-	  	p @user.chattimes
-	  	@user.save
+	  	p ChatLimit.find_by_email(@user.email).chattimes
+	  	p ChatLimit.find_by_email(@user.email).chatstamp
 	  	redirect_to root_url
-	elsif @user.chattimes < 4
+	elsif ChatLimit.find_by_email(@user.email).chattimes < 4
 		@mentor = User.find_by_slug(params[:slug])
 	  	MentorMailer.freechat_email(@user, @mentor).deliver
 	  	MentorMailer.freechat_email_student(@user, @mentor).deliver
 	  	flash[:success] = "Email successfully sent!"
-	  	@user.chattimes += 1
-	  	@user.save
+	  	@chat = ChatLimit.find_by_email(@user.email)
+	  	@chat.chattimes += 1
+	  	@chat.save
 	  	redirect_to root_url
-	elsif @user.chattimes = 4
-		if (Time.now - @user.chatstamp) / 604800 > 1
+	elsif ChatLimit.find_by_email(@user.email).chattimes = 4
+		@chat = ChatLimit.find_by_email(@user.email)
+		if (Time.now - @chat.chatstamp) / 604800 > 1
 			@mentor = User.find_by_slug(params[:slug])
 		  	MentorMailer.freechat_email(@user, @mentor).deliver
 		  	MentorMailer.freechat_email_student(@user, @mentor).deliver
 		  	flash[:success] = "Email successfully sent!"
-		  	@user.chattimes = 1
-		  	@user.chatstamp = Time.now
-		  	@user.save
+		  	@chat.chattimes = 1
+		  	@chat.chatstamp = Time.now
+		  	@chat.save
 		  	redirect_to root_url
 		else
 			flash[:success] = "You have reached your weekly limit of 4 requests to chat. Please check back in a week to request additional chats."
