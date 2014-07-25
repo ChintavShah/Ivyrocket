@@ -47,11 +47,35 @@ class UsersController < ApplicationController
 
   def mentor_mailing
   	@user = current_user
-  	@mentor = User.find_by_slug(params[:slug])
-  	MentorMailer.freechat_email(@user, @mentor).deliver
-  	MentorMailer.freechat_email_student(@user, @mentor).deliver
-  	flash[:success] = "Email successfully sent!"
-  	redirect_to root_url
+  	if @user.chattimes.blank?
+	  	@mentor = User.find_by_slug(params[:slug])
+	  	MentorMailer.freechat_email(@user, @mentor).deliver
+	  	MentorMailer.freechat_email_student(@user, @mentor).deliver
+	  	flash[:success] = "Email successfully sent!"
+	  	@user.chattimes = 1
+	  	@user.chatstamp = Time.now
+	  	redirect_to root_url
+	elsif @user.chattimes < 4
+		@mentor = User.find_by_slug(params[:slug])
+	  	MentorMailer.freechat_email(@user, @mentor).deliver
+	  	MentorMailer.freechat_email_student(@user, @mentor).deliver
+	  	flash[:success] = "Email successfully sent!"
+	  	@user.chattimes += 1
+	  	redirect_to root_url
+	elsif @user.chattimes = 4
+		if (Time.now - @user.chatstamp) / 604800 > 1
+			@mentor = User.find_by_slug(params[:slug])
+		  	MentorMailer.freechat_email(@user, @mentor).deliver
+		  	MentorMailer.freechat_email_student(@user, @mentor).deliver
+		  	flash[:success] = "Email successfully sent!"
+		  	@user.chattimes = 1
+		  	@user.chatstamp = Time.now
+		  	redirect_to root_url
+		else
+			flash[:success] = "You have reached your weekly limit of 4 requests to chat. Please check back in a week to request additional chats."
+			redirect_to root_url
+		end
+	end
   end
 
   def express_order

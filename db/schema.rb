@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614154200) do
+ActiveRecord::Schema.define(version: 20140725150914) do
 
   create_table "orders", force: true do |t|
     t.string   "express_token"
@@ -90,6 +90,8 @@ ActiveRecord::Schema.define(version: 20140614154200) do
     t.text     "biggest_piece_of_advice_to_high_school_students"
     t.text     "avatar"
     t.string   "slug"
+    t.integer  "chattimes"
+    t.datetime "chatstamp"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
