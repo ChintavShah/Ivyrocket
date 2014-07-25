@@ -54,6 +54,9 @@ class UsersController < ApplicationController
 	  	flash[:success] = "Email successfully sent!"
 	  	@user.chattimes = 1
 	  	@user.chatstamp = Time.now
+	  	puts "HEREHERERERER"
+	  	p @user.chattimes
+	  	@user.save
 	  	redirect_to root_url
 	elsif @user.chattimes < 4
 		@mentor = User.find_by_slug(params[:slug])
@@ -61,6 +64,7 @@ class UsersController < ApplicationController
 	  	MentorMailer.freechat_email_student(@user, @mentor).deliver
 	  	flash[:success] = "Email successfully sent!"
 	  	@user.chattimes += 1
+	  	@user.save
 	  	redirect_to root_url
 	elsif @user.chattimes = 4
 		if (Time.now - @user.chatstamp) / 604800 > 1
@@ -70,6 +74,7 @@ class UsersController < ApplicationController
 		  	flash[:success] = "Email successfully sent!"
 		  	@user.chattimes = 1
 		  	@user.chatstamp = Time.now
+		  	@user.save
 		  	redirect_to root_url
 		else
 			flash[:success] = "You have reached your weekly limit of 4 requests to chat. Please check back in a week to request additional chats."
