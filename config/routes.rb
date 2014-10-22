@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   get 'user_mentor/:id' => 'users#user_mentor', :as => :user_mentor
   match '/process',    to: 'static_pages#ivyrocket_process',        via: 'get'
   match '/contact_us',    to: 'static_pages#contact_us',        via: 'get'
+  match '/ivyrocket',   to: 'users#ivyrocket_chat',    via: 'get'
+  match '/ivyrocket_chat', to: 'users#ivyrocket_mailing', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

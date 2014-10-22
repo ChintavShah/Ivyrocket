@@ -1178,14 +1178,14 @@ $body-font-family: "ProximaNova-Light", "Helvetica Neue", "Helvetica", Helvetica
 
 // Background color for the top bar
 $topbar-bg-color: rgba(#333,0.5);
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
-// $topbar-margin-bottom: 0;
+$topbar-height: 100px;
+$topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: $font-weight-normal;
+// \$topbar-title-weight: $font-weight-normal;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements

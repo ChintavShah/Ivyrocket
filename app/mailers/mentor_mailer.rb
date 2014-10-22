@@ -10,7 +10,12 @@ class MentorMailer < ActionMailer::Base
   def freechat_email_student(student, mentor)
   	@student = student
   	@mentor = mentor
-  	mail(to: "#{student.name} <#{student.email}>", subject: "[IvyRocket] Request for chat")
+  	mail(to: "#{student.name} <#{student.email}>", subject: "[IvyRocket] Request for 20 Minute Consultation")
+  end
+
+  def ivyrocketchat_email(student)
+    @student = student
+    mail(to: ["#{student.name} <#{student.email}>", "theivyrocket@gmail.com"], subject: "[IvyRocket] Free Consultation with the IvyRocket Team")
   end
 
   def first_hour_purchase_email(mentor, student)

@@ -1,0 +1,37 @@
+<div class="profile">
+  <br><br><br><br><br><br><br>
+  <div class="profile-p-home" style="font-size:20px; color:black"></div><br><br>
+  <h6 style="font-family: 'ProximaNova-Light';
+    font-size: 3.7em;
+    text-align: center;
+    color: white;
+    margin: -.1em 0 .5em;
+    font-weight: 700;">Hello from the IvyRocket Team!</h6>
+  
+  <div class="row" style="padding-bottom:5em">
+    <div class="twelve columns">
+      <div class="profile-p" style="margin-top:-15px; border-bottom-style:none; font-size:2em">
+        You can request to chat with us to talk about any questions you might have about college admissions, how IvyRocket works, and what IvyRocket can do for you. If you are a Freshmen, Sophomore, or Junior, we can create customized packages for you that is tailored to your needs. We can also speak Mandarin Chinese, so if you are a parent, we would love to talk to you too! <br><br>
+        By clicking Yes, you will be sending us your email address. We will contact you as soon as possible via email to set up a time to talk. Do you want to request a free consultation?
+      </div>
+      <br><br><br>
+      <div class="row">
+        <div class="three columns"></div>
+        <div class="two columns">
+          <div style="text-align: right">
+            <%= link_to "Yes", '/ivyrocket_chat', {style: 'width:500px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
+          </div>
+        </div>
+        <div class="two columns"></div>
+        <div class="two columns">
+          <div style="text-align: left">
+            <%= link_to "No", mentors_path, {style: 'width:200px; height:50px; font-size:25px; text-align:center', class: "button-splash"}%>
+          </div>
+        </div>
+        <div class="three columns"></div>
+      </div> 
+    </div>
+    <div class="one column"></div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+</div>

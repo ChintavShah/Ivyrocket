@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :mentor_mailing]
+  before_action :authenticate_user!, only: [:show, :mentor_mailing, :ivyrocket_chat]
 
   def index
     mentors = User.with_role :mentor
@@ -14,6 +14,17 @@ class UsersController < ApplicationController
   	elsif current_user.has_role? :admin
   		@users = User.order('id ASC')
   	end
+  end
+
+  def ivyrocket_chat
+  	@user = current_user
+  end
+
+  def ivyrocket_mailing
+  	@user = current_user
+  	MentorMailer.ivyrocketchat_email(@user).deliver
+  	flash[:success] = "Email successfully sent!"
+	redirect_to root_url
   end
 
   def user_mentor

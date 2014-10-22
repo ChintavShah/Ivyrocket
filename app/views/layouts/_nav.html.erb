@@ -1,4 +1,35 @@
 <div class= "fixed">
+  <!--
+  <nav class="top-bar" data-topbar role="navigation">
+    <div class="row">
+      <ul class="title-area">
+        <li class="name">
+          <div style="margin-top: -13px"><%= link_to image_tag('IvyRocketLogo3.png', width:155, height:30), root_path, style:"opacity:1;"%></div>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="active"><a href="#">Right Button Active</a></li>
+          <li class="has-dropdown">
+            <a href="#">Right Button Dropdown</a>
+            <ul class="dropdown">
+              <li><a href="#">First link in dropdown</a></li>
+              <li class="active"><a href="#">Active link in dropdown</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="left">
+          <li><a href="#">Left Nav Button</a></li>
+        </ul>
+      </section>
+    </div>
+  </nav>
+  -->
+
+
   <nav class>
      <div class="twelve columns header_nav">
      <div class="row">
@@ -6,23 +37,12 @@
         <div style="margin-top: -13px"><%= link_to image_tag('IvyRocketLogo3.png', width:155, height:30), root_path, style:"opacity:1;"%></div>
         </ul>
         <ul id="menu-header" class="nav-bar horizontal right">
-        <!--
-          <li class="has-flyout">
-           <a href="#">Example Pages</a><a href="#" class="flyout-toggle"></a>
-            <ul class="flyout">
-              <li class="has-flyout"><a href="blog.html">Blog</a></li>
-              <li class="has-flyout"><a href="blog_single.html">Blog Single Page</a></li>
-              <li class="has-flyout"><a href="products-page.html">Products Page</a></li>
-              <li class="has-flyout"><a href="product-single.html">Product Single</a></li>
-              <li class="has-flyout"><a href="pricing-table.html">Pricing Table</a></li>
-              <li class="has-flyout"><a href="contact.html">Contact Page</a></li>
-            </ul> 
-          </li>-->
         
-          <li><%= link_to "The IvyRocket Process", process_path %></li>
           <li><%= link_to "Find a Mentor", mentors_path %></li>
-          <li><a href="/become_mentor">Become a Mentor</a></li>
           <li><%= link_to "Pricing", pricing_path %></li>
+          <li><%= link_to "The IvyRocket Process", process_path %></li>
+          <li><a href="/become_mentor">Become a Mentor</a></li>
+          
 
           <% if user_signed_in? %>
             <li class="has-flyout">
@@ -57,7 +77,22 @@
           //]]>
         </script>
         
+
+        
       </div>  
       </div>
   </nav>
 </div>
+
+      <!--
+          <li class="has-flyout">
+           <a href="#">Example Pages</a><a href="#" class="flyout-toggle"></a>
+            <ul class="flyout">
+              <li class="has-flyout"><a href="blog.html">Blog</a></li>
+              <li class="has-flyout"><a href="blog_single.html">Blog Single Page</a></li>
+              <li class="has-flyout"><a href="products-page.html">Products Page</a></li>
+              <li class="has-flyout"><a href="product-single.html">Product Single</a></li>
+              <li class="has-flyout"><a href="pricing-table.html">Pricing Table</a></li>
+              <li class="has-flyout"><a href="contact.html">Contact Page</a></li>
+            </ul> 
+          </li>-->

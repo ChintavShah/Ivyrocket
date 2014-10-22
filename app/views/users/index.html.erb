@@ -15,6 +15,25 @@
 		<div class="ten columns">
 		
 			<ul>
+			    <div class="row" style="padding: 20px 0 1em 0">
+			    	<div class="twelve columns">
+			    		<h2 class="white" style="text-align:center">
+			    			Below are a list of our mentors.<br>
+			    			You can click on their names to view their full profiles and request a free 20 minute consultation with them. <br><br>
+			    			<%= link_to ("You can also click here to request a free 20 minute consultation with the IvyRocket Team!"), "/ivyrocket", class: "index-name"%></h2>
+			    		<ul class="index-info">
+			    			<li><h2 class="white"></h2></li>
+			    			<li><h3 class="white"></h3></li>
+			    			
+			    			<li><h4 small class="white"></h4></li>
+			    		</ul>
+					</div>
+				</div>
+				<HR WIDTH="100%" SIZE="3" NOSHADE>
+			</ul>
+
+
+			<ul>
 			  <% length = @users.length %>
 			  <% @users.each_with_index do |user, index| %>
 			    <div class="row" style="padding: 20px 0 20px 0" >
